@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		450E321625A57D1300881CF5 /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 450E321525A57D1300881CF5 /* libfbxsdk.dylib */; };
+		450E321E25A57E1200881CF5 /* libfbxsdk.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 450E321525A57D1300881CF5 /* libfbxsdk.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		450E322425A5807D00881CF5 /* FBXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E322325A5807D00881CF5 /* FBXManager.swift */; };
+		450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */ = {isa = PBXBuildFile; fileRef = 450E322925A5818800881CF5 /* SwiftyFBX.h */; };
+		4513358825A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513358625A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h */; };
+		4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */; };
+		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; };
+		4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */; };
+		452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */; };
+		452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */; };
+		456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */; };
+		456F48C925AA9E2900B03DF2 /* FBXLayerElementNormal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */; };
+		456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */; };
+		456F48D325AA9FDF00B03DF2 /* FBXLayerContainer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */; };
+		4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */; };
+		4586F83725AAE9FB000BDC10 /* FBXScene_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F82F25AAE774000BDC10 /* FBXScene_Internal.h */; };
+		4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */; };
+		459E916425A5C2CD008B1CC3 /* FBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916325A5C2CD008B1CC3 /* FBX.swift */; };
+		459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */; };
+		45ACB79425A467AB00ED565F /* FBXManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ACB79325A467AB00ED565F /* FBXManager.mm */; };
+		45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ACB7A825A46B7400ED565F /* FBXManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45D28F5225A4E083007A7489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D28F5125A4E083007A7489 /* main.swift */; };
+		45D28F5D25A4E0D4007A7489 /* SwiftyFBX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */; };
+		45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */; };
+		45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64C625A5846D00C77BD8 /* FBXImporter.h */; };
+		45DA64C925A5846D00C77BD8 /* FBXImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C725A5846D00C77BD8 /* FBXImporter.mm */; };
+		45DA64CF25A584E000C77BD8 /* FBXScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64CD25A584E000C77BD8 /* FBXScene.h */; };
+		45DA64D025A584E000C77BD8 /* FBXScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64CE25A584E000C77BD8 /* FBXScene.mm */; };
+		45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D325A5862F00C77BD8 /* FBXMesh.h */; };
+		45DA64D625A5862F00C77BD8 /* FBXMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64D425A5862F00C77BD8 /* FBXMesh.mm */; };
+		45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D925A5867500C77BD8 /* FBXNode.h */; };
+		45DA64DC25A5867500C77BD8 /* FBXNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64DA25A5867500C77BD8 /* FBXNode.mm */; };
+		45DA64E125A58B1200C77BD8 /* FBXDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64DF25A58B1200C77BD8 /* FBXDocument.h */; };
+		45DA64E225A58B1200C77BD8 /* FBXDocument.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64E025A58B1200C77BD8 /* FBXDocument.mm */; };
+		45DA64E725A58EF300C77BD8 /* FBXCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64E525A58EF300C77BD8 /* FBXCollection.h */; };
+		45DA64E825A58EF300C77BD8 /* FBXCollection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64E625A58EF300C77BD8 /* FBXCollection.mm */; };
+		45DA64EE25A59B4400C77BD8 /* SwiftyFBXLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64EC25A59B4400C77BD8 /* SwiftyFBXLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45DA64EF25A59B4400C77BD8 /* SwiftyFBXLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64ED25A59B4400C77BD8 /* SwiftyFBXLoader.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45D28F5825A4E09E007A7489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45ACB76125A464A900ED565F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45ACB76925A464A900ED565F;
+			remoteInfo = SwiftyFBX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		450E321D25A57DF200881CF5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				450E321E25A57E1200881CF5 /* libfbxsdk.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45D28F4D25A4E083007A7489 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		450E321525A57D1300881CF5 /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = "../../../../../../../Applications/Autodesk/FBX SDK/2020.0.1/lib/clang/release/libfbxsdk.dylib"; sourceTree = "<group>"; };
+		450E322325A5807D00881CF5 /* FBXManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBXManager.swift; sourceTree = "<group>"; };
+		450E322625A580CB00881CF5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		450E322925A5818800881CF5 /* SwiftyFBX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFBX.h; sourceTree = "<group>"; };
+		4513358625A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXFileFormatVersion.h; sourceTree = "<group>"; };
+		4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXFileFormatVersion.mm; sourceTree = "<group>"; };
+		4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXLoadResult.h; sourceTree = "<group>"; };
+		4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXLoadResult.mm; sourceTree = "<group>"; };
+		452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElement.h; sourceTree = "<group>"; };
+		452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBXLayerElement.m; sourceTree = "<group>"; };
+		456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElementNormal.h; sourceTree = "<group>"; };
+		456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXLayerElementNormal.mm; sourceTree = "<group>"; };
+		456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerContainer.h; sourceTree = "<group>"; };
+		456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXLayerContainer.mm; sourceTree = "<group>"; };
+		4586F82F25AAE774000BDC10 /* FBXScene_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXScene_Internal.h; sourceTree = "<group>"; };
+		4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXMesh_Internal.h; sourceTree = "<group>"; };
+		4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXLayerElementNormal_Internal.h; sourceTree = "<group>"; };
+		459E916325A5C2CD008B1CC3 /* FBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBX.swift; sourceTree = "<group>"; };
+		459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBXLoader.swift; sourceTree = "<group>"; };
+		45ACB76A25A464A900ED565F /* SwiftyFBX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyFBX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45ACB76E25A464A900ED565F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45ACB79325A467AB00ED565F /* FBXManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXManager.mm; sourceTree = "<group>"; };
+		45ACB7A825A46B7400ED565F /* FBXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXManager.h; sourceTree = "<group>"; };
+		45D28F4F25A4E083007A7489 /* SwiftyFBX-CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SwiftyFBX-CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45D28F5125A4E083007A7489 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXIOSettings.mm; sourceTree = "<group>"; };
+		45DA64C525A5840F00C77BD8 /* FBXIOSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXIOSettings.h; sourceTree = "<group>"; };
+		45DA64C625A5846D00C77BD8 /* FBXImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXImporter.h; sourceTree = "<group>"; };
+		45DA64C725A5846D00C77BD8 /* FBXImporter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXImporter.mm; sourceTree = "<group>"; };
+		45DA64CD25A584E000C77BD8 /* FBXScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXScene.h; sourceTree = "<group>"; };
+		45DA64CE25A584E000C77BD8 /* FBXScene.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXScene.mm; sourceTree = "<group>"; };
+		45DA64D325A5862F00C77BD8 /* FBXMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXMesh.h; sourceTree = "<group>"; };
+		45DA64D425A5862F00C77BD8 /* FBXMesh.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXMesh.mm; sourceTree = "<group>"; };
+		45DA64D925A5867500C77BD8 /* FBXNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXNode.h; sourceTree = "<group>"; };
+		45DA64DA25A5867500C77BD8 /* FBXNode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXNode.mm; sourceTree = "<group>"; };
+		45DA64DF25A58B1200C77BD8 /* FBXDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXDocument.h; sourceTree = "<group>"; };
+		45DA64E025A58B1200C77BD8 /* FBXDocument.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXDocument.mm; sourceTree = "<group>"; };
+		45DA64E525A58EF300C77BD8 /* FBXCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXCollection.h; sourceTree = "<group>"; };
+		45DA64E625A58EF300C77BD8 /* FBXCollection.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXCollection.mm; sourceTree = "<group>"; };
+		45DA64EC25A59B4400C77BD8 /* SwiftyFBXLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXLoader.h; sourceTree = "<group>"; };
+		45DA64ED25A59B4400C77BD8 /* SwiftyFBXLoader.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXLoader.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45ACB76725A464A900ED565F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450E321625A57D1300881CF5 /* libfbxsdk.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45D28F4C25A4E083007A7489 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D28F5D25A4E0D4007A7489 /* SwiftyFBX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		450E322225A5806B00881CF5 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				459E916325A5C2CD008B1CC3 /* FBX.swift */,
+				459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */,
+				450E322325A5807D00881CF5 /* FBXManager.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		45ACB76025A464A900ED565F = {
+			isa = PBXGroup;
+			children = (
+				45ACB76C25A464A900ED565F /* SwiftyFBX */,
+				45D28F5025A4E083007A7489 /* SwiftyFBX-CLI */,
+				45ACB76B25A464A900ED565F /* Products */,
+				45D28F5C25A4E0D4007A7489 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		45ACB76B25A464A900ED565F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45ACB76A25A464A900ED565F /* SwiftyFBX.framework */,
+				45D28F4F25A4E083007A7489 /* SwiftyFBX-CLI */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45ACB76C25A464A900ED565F /* SwiftyFBX */ = {
+			isa = PBXGroup;
+			children = (
+				45ACB76E25A464A900ED565F /* Info.plist */,
+				450E322625A580CB00881CF5 /* module.modulemap */,
+				450E322925A5818800881CF5 /* SwiftyFBX.h */,
+				450E322225A5806B00881CF5 /* Swift */,
+				45ACB79225A4678A00ED565F /* ObjC++ */,
+			);
+			path = SwiftyFBX;
+			sourceTree = "<group>";
+		};
+		45ACB79225A4678A00ED565F /* ObjC++ */ = {
+			isa = PBXGroup;
+			children = (
+				45ACB7A825A46B7400ED565F /* FBXManager.h */,
+				45ACB79325A467AB00ED565F /* FBXManager.mm */,
+				45DA64C525A5840F00C77BD8 /* FBXIOSettings.h */,
+				45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */,
+				45DA64C625A5846D00C77BD8 /* FBXImporter.h */,
+				45DA64C725A5846D00C77BD8 /* FBXImporter.mm */,
+				45DA64E525A58EF300C77BD8 /* FBXCollection.h */,
+				45DA64E625A58EF300C77BD8 /* FBXCollection.mm */,
+				45DA64DF25A58B1200C77BD8 /* FBXDocument.h */,
+				45DA64E025A58B1200C77BD8 /* FBXDocument.mm */,
+				456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */,
+				456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */,
+				452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */,
+				452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */,
+				456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */,
+				4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */,
+				456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */,
+				45DA64D325A5862F00C77BD8 /* FBXMesh.h */,
+				4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */,
+				45DA64D425A5862F00C77BD8 /* FBXMesh.mm */,
+				45DA64CD25A584E000C77BD8 /* FBXScene.h */,
+				4586F82F25AAE774000BDC10 /* FBXScene_Internal.h */,
+				45DA64CE25A584E000C77BD8 /* FBXScene.mm */,
+				45DA64D925A5867500C77BD8 /* FBXNode.h */,
+				45DA64DA25A5867500C77BD8 /* FBXNode.mm */,
+				45DA64EC25A59B4400C77BD8 /* SwiftyFBXLoader.h */,
+				45DA64ED25A59B4400C77BD8 /* SwiftyFBXLoader.mm */,
+				4513358625A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h */,
+				4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */,
+				4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */,
+				4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */,
+			);
+			path = "ObjC++";
+			sourceTree = "<group>";
+		};
+		45D28F5025A4E083007A7489 /* SwiftyFBX-CLI */ = {
+			isa = PBXGroup;
+			children = (
+				45D28F5125A4E083007A7489 /* main.swift */,
+			);
+			path = "SwiftyFBX-CLI";
+			sourceTree = "<group>";
+		};
+		45D28F5C25A4E0D4007A7489 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				450E321525A57D1300881CF5 /* libfbxsdk.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		45ACB76525A464A900ED565F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45DA64CF25A584E000C77BD8 /* FBXScene.h in Headers */,
+				4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */,
+				456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */,
+				45DA64E725A58EF300C77BD8 /* FBXCollection.h in Headers */,
+				452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */,
+				45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */,
+				456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */,
+				45DA64E125A58B1200C77BD8 /* FBXDocument.h in Headers */,
+				4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */,
+				45DA64EE25A59B4400C77BD8 /* SwiftyFBXLoader.h in Headers */,
+				4586F83725AAE9FB000BDC10 /* FBXScene_Internal.h in Headers */,
+				45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */,
+				45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */,
+				450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */,
+				4513358825A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h in Headers */,
+				4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */,
+				45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		45ACB76925A464A900ED565F /* SwiftyFBX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45ACB77225A464A900ED565F /* Build configuration list for PBXNativeTarget "SwiftyFBX" */;
+			buildPhases = (
+				45ACB76525A464A900ED565F /* Headers */,
+				45ACB76625A464A900ED565F /* Sources */,
+				45ACB76725A464A900ED565F /* Frameworks */,
+				45ACB76825A464A900ED565F /* Resources */,
+				450E321D25A57DF200881CF5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyFBX;
+			productName = SwiftyFBX;
+			productReference = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		45D28F4E25A4E083007A7489 /* SwiftyFBX-CLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45D28F5325A4E083007A7489 /* Build configuration list for PBXNativeTarget "SwiftyFBX-CLI" */;
+			buildPhases = (
+				45D28F4B25A4E083007A7489 /* Sources */,
+				45D28F4C25A4E083007A7489 /* Frameworks */,
+				45D28F4D25A4E083007A7489 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45D28F5925A4E09E007A7489 /* PBXTargetDependency */,
+			);
+			name = "SwiftyFBX-CLI";
+			productName = "SwiftyFBX-CLI";
+			productReference = 45D28F4F25A4E083007A7489 /* SwiftyFBX-CLI */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45ACB76125A464A900ED565F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					45ACB76925A464A900ED565F = {
+						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
+					};
+					45D28F4E25A4E083007A7489 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 45ACB76425A464A900ED565F /* Build configuration list for PBXProject "SwiftyFBX" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45ACB76025A464A900ED565F;
+			productRefGroup = 45ACB76B25A464A900ED565F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45ACB76925A464A900ED565F /* SwiftyFBX */,
+				45D28F4E25A4E083007A7489 /* SwiftyFBX-CLI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45ACB76825A464A900ED565F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45ACB76625A464A900ED565F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				456F48D325AA9FDF00B03DF2 /* FBXLayerContainer.mm in Sources */,
+				4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */,
+				452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */,
+				456F48C925AA9E2900B03DF2 /* FBXLayerElementNormal.mm in Sources */,
+				45DA64C925A5846D00C77BD8 /* FBXImporter.mm in Sources */,
+				45DA64EF25A59B4400C77BD8 /* SwiftyFBXLoader.mm in Sources */,
+				45DA64DC25A5867500C77BD8 /* FBXNode.mm in Sources */,
+				45ACB79425A467AB00ED565F /* FBXManager.mm in Sources */,
+				45DA64D025A584E000C77BD8 /* FBXScene.mm in Sources */,
+				45DA64E225A58B1200C77BD8 /* FBXDocument.mm in Sources */,
+				45DA64E825A58EF300C77BD8 /* FBXCollection.mm in Sources */,
+				459E916425A5C2CD008B1CC3 /* FBX.swift in Sources */,
+				45DA64D625A5862F00C77BD8 /* FBXMesh.mm in Sources */,
+				459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */,
+				450E322425A5807D00881CF5 /* FBXManager.swift in Sources */,
+				4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */,
+				45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45D28F4B25A4E083007A7489 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D28F5225A4E083007A7489 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45D28F5925A4E09E007A7489 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45ACB76925A464A900ED565F /* SwiftyFBX */;
+			targetProxy = 45D28F5825A4E09E007A7489 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		45ACB77025A464A900ED565F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		45ACB77125A464A900ED565F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		45ACB77325A464A900ED565F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KCACRD7592;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"\"/Applications/Autodesk/FBX SDK/2020.0.1/include\"/**",
+					"$(SRCROOT)/$(TARGET_NAME)",
+				);
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = "$(TARGETNAME)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "\"/Applications/Autodesk/FBX SDK/2020.0.1/lib/clang/release\"";
+				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		45ACB77425A464A900ED565F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KCACRD7592;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"\"/Applications/Autodesk/FBX SDK/2020.0.1/include\"/**",
+					"$(SRCROOT)/$(TARGET_NAME)",
+				);
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = "$(TARGETNAME)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "\"/Applications/Autodesk/FBX SDK/2020.0.1/lib/clang/release\"";
+				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		45D28F5425A4E083007A7489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KCACRD7592;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/SwiftyFBX/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		45D28F5525A4E083007A7489 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KCACRD7592;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/SwiftyFBX/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45ACB76425A464A900ED565F /* Build configuration list for PBXProject "SwiftyFBX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45ACB77025A464A900ED565F /* Debug */,
+				45ACB77125A464A900ED565F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45ACB77225A464A900ED565F /* Build configuration list for PBXNativeTarget "SwiftyFBX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45ACB77325A464A900ED565F /* Debug */,
+				45ACB77425A464A900ED565F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45D28F5325A4E083007A7489 /* Build configuration list for PBXNativeTarget "SwiftyFBX-CLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45D28F5425A4E083007A7489 /* Debug */,
+				45D28F5525A4E083007A7489 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45ACB76125A464A900ED565F /* Project object */;
+}

@@ -1,0 +1,5 @@
+module SwiftyFBX [system] {
+    umbrella header "SwiftyFBX.h"
+    export *
+    module * { export * }
+}

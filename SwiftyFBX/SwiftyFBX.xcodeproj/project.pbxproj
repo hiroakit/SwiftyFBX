@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		450E321625A57D1300881CF5 /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 450E321525A57D1300881CF5 /* libfbxsdk.dylib */; };
 		450E321E25A57E1200881CF5 /* libfbxsdk.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 450E321525A57D1300881CF5 /* libfbxsdk.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		450E322425A5807D00881CF5 /* FBXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E322325A5807D00881CF5 /* FBXManager.swift */; };
 		450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */ = {isa = PBXBuildFile; fileRef = 450E322925A5818800881CF5 /* SwiftyFBX.h */; };
@@ -15,6 +14,7 @@
 		4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */; };
 		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; };
 		4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */; };
+		4520A63925B424B6009CB46A /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520A63825B424B6009CB46A /* libfbxsdk.dylib */; };
 		452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */; };
 		452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */; };
 		456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */; };
@@ -88,6 +88,7 @@
 		4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXFileFormatVersion.mm; sourceTree = "<group>"; };
 		4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXLoadResult.h; sourceTree = "<group>"; };
 		4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXLoadResult.mm; sourceTree = "<group>"; };
+		4520A63825B424B6009CB46A /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = ../../../../../../usr/local/Cellar/fbx/20202/lib/libfbxsdk.dylib; sourceTree = "<group>"; };
 		452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElement.h; sourceTree = "<group>"; };
 		452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBXLayerElement.m; sourceTree = "<group>"; };
 		456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElementNormal.h; sourceTree = "<group>"; };
@@ -128,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				450E321625A57D1300881CF5 /* libfbxsdk.dylib in Frameworks */,
+				4520A63925B424B6009CB46A /* libfbxsdk.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +234,7 @@
 		45D28F5C25A4E0D4007A7489 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4520A63825B424B6009CB46A /* libfbxsdk.dylib */,
 				450E321525A57D1300881CF5 /* libfbxsdk.dylib */,
 			);
 			name = Frameworks;
@@ -532,7 +534,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
-					"\"/Applications/Autodesk/FBX SDK/2020.0.1/include\"/**",
+					/usr/local/Cellar/fbx/20202/include/,
 					"$(SRCROOT)/$(TARGET_NAME)",
 				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
@@ -543,7 +545,10 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "\"/Applications/Autodesk/FBX SDK/2020.0.1/lib/clang/release\"";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/fbx/20202/lib/,
+					"/**",
+				);
 				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -568,7 +573,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
-					"\"/Applications/Autodesk/FBX SDK/2020.0.1/include\"/**",
+					/usr/local/Cellar/fbx/20202/include/,
 					"$(SRCROOT)/$(TARGET_NAME)",
 				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
@@ -579,7 +584,10 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "\"/Applications/Autodesk/FBX SDK/2020.0.1/lib/clang/release\"";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/fbx/20202/lib/,
+					"/**",
+				);
 				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

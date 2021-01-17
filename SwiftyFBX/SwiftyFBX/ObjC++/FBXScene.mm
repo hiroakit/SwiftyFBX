@@ -6,17 +6,20 @@
 //
 
 #import "FBXScene.h"
-#import "FBXScene_Internal.h"
+#import "FBXSecne_Internal.h"
 #import "FBXMesh.h"
 #import "FBXMesh_Internal.h"
 #import "fbxsdk.h"
 
-@implementation FBXScene
+@implementation FBXScene {
+    FbxScene* _cScene;
+}
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+        _cScene = NULL;
         _markers = [NSArray array];
         _meshs = [NSMutableArray array];
     }
@@ -29,6 +32,7 @@
     if(cScene == NULL) {
         return self;
     }
+    _cScene = cScene;
     
     int totalCount = cScene->GetMemberCount<FbxMesh>();
     for (int i = 0; i < totalCount; i++) {
@@ -42,7 +46,15 @@
     return self;
 }
 
-- (instancetype)createWithManager:(FBXManager* )manager sceneName:(NSString *)sceneName {
+- (void)dealloc {
+    _cScene = NULL;
+    _markers = nil;
+    _meshs = nil;
+    
+    [super dealloc];
+}
+
++ (instancetype)createWithManager:(FBXManager *)manager sceneName:(NSString *)sceneName {
     return [[FBXScene alloc] init];
 }
 
@@ -55,7 +67,14 @@
     return scene;
 }
 
-- (int)GetMemberCount {
+- (int)textureCount {
+    if(_cScene == NULL) {
+        return 0;
+    }
+    return _cScene->GetMemberCount<FbxTexture>();
+}
+
+- (int)getMemberCount {
     return 0;
 }
 

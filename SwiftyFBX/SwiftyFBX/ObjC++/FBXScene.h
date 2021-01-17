@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSArray *lights;
 @property (nonatomic, readonly) NSArray *lodgroups;
 
-- (instancetype)createWithManager:(FBXManager* )manager sceneName:(NSString *)sceneName;
+//+ (instancetype)createWithManager:(FBXManager *)manager sceneName:(NSString *)sceneName;
+- (int)textureCount;
 @end
 
 NS_ASSUME_NONNULL_END

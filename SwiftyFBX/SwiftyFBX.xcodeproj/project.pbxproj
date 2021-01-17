@@ -15,14 +15,18 @@
 		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; };
 		4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */; };
 		4520A63925B424B6009CB46A /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520A63825B424B6009CB46A /* libfbxsdk.dylib */; };
+		4520A66025B4780A009CB46A /* FBXTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520A65E25B4780A009CB46A /* FBXTexture.h */; };
+		4520A66125B4780A009CB46A /* FBXTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4520A65F25B4780A009CB46A /* FBXTexture.mm */; };
+		4520A66625B47827009CB46A /* FBXFileTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520A66425B47827009CB46A /* FBXFileTexture.h */; };
+		4520A66725B47827009CB46A /* FBXFileTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4520A66525B47827009CB46A /* FBXFileTexture.mm */; };
 		452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */; };
 		452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */; };
+		45455DA225B48EEA00D6D8A7 /* FBXSecne_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45455DA125B48EEA00D6D8A7 /* FBXSecne_Internal.h */; };
 		456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */; };
 		456F48C925AA9E2900B03DF2 /* FBXLayerElementNormal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */; };
 		456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */; };
 		456F48D325AA9FDF00B03DF2 /* FBXLayerContainer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */; };
 		4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */; };
-		4586F83725AAE9FB000BDC10 /* FBXScene_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F82F25AAE774000BDC10 /* FBXScene_Internal.h */; };
 		4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */; };
 		459E916425A5C2CD008B1CC3 /* FBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916325A5C2CD008B1CC3 /* FBX.swift */; };
 		459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */; };
@@ -33,7 +37,7 @@
 		45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */; };
 		45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64C625A5846D00C77BD8 /* FBXImporter.h */; };
 		45DA64C925A5846D00C77BD8 /* FBXImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C725A5846D00C77BD8 /* FBXImporter.mm */; };
-		45DA64CF25A584E000C77BD8 /* FBXScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64CD25A584E000C77BD8 /* FBXScene.h */; };
+		45DA64CF25A584E000C77BD8 /* FBXScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64CD25A584E000C77BD8 /* FBXScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45DA64D025A584E000C77BD8 /* FBXScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64CE25A584E000C77BD8 /* FBXScene.mm */; };
 		45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D325A5862F00C77BD8 /* FBXMesh.h */; };
 		45DA64D625A5862F00C77BD8 /* FBXMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64D425A5862F00C77BD8 /* FBXMesh.mm */; };
@@ -91,11 +95,11 @@
 		4520A63825B424B6009CB46A /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = ../../../../../../usr/local/Cellar/fbx/20202/lib/libfbxsdk.dylib; sourceTree = "<group>"; };
 		452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElement.h; sourceTree = "<group>"; };
 		452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBXLayerElement.m; sourceTree = "<group>"; };
+		45455DA125B48EEA00D6D8A7 /* FBXSecne_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXSecne_Internal.h; sourceTree = "<group>"; };
 		456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElementNormal.h; sourceTree = "<group>"; };
 		456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXLayerElementNormal.mm; sourceTree = "<group>"; };
 		456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerContainer.h; sourceTree = "<group>"; };
 		456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXLayerContainer.mm; sourceTree = "<group>"; };
-		4586F82F25AAE774000BDC10 /* FBXScene_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXScene_Internal.h; sourceTree = "<group>"; };
 		4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXMesh_Internal.h; sourceTree = "<group>"; };
 		4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXLayerElementNormal_Internal.h; sourceTree = "<group>"; };
 		459E916325A5C2CD008B1CC3 /* FBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBX.swift; sourceTree = "<group>"; };
@@ -209,7 +213,7 @@
 				4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */,
 				45DA64D425A5862F00C77BD8 /* FBXMesh.mm */,
 				45DA64CD25A584E000C77BD8 /* FBXScene.h */,
-				4586F82F25AAE774000BDC10 /* FBXScene_Internal.h */,
+				45455DA125B48EEA00D6D8A7 /* FBXSecne_Internal.h */,
 				45DA64CE25A584E000C77BD8 /* FBXScene.mm */,
 				45DA64D925A5867500C77BD8 /* FBXNode.h */,
 				45DA64DA25A5867500C77BD8 /* FBXNode.mm */,
@@ -257,7 +261,6 @@
 				45DA64E125A58B1200C77BD8 /* FBXDocument.h in Headers */,
 				4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */,
 				45DA64EE25A59B4400C77BD8 /* SwiftyFBXLoader.h in Headers */,
-				4586F83725AAE9FB000BDC10 /* FBXScene_Internal.h in Headers */,
 				45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */,
 				45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */,
 				450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */,

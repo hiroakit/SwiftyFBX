@@ -8,22 +8,17 @@
 #import "SwiftyFBXLoader.h"
 #import "SwiftyFBXLoadResult.h"
 #import "SwiftyFBXFileFormatVersion.h"
-#import "FBXScene.h"
-#import "FBXScene_Internal.h"
+#import "FBXScene.h"         
+#import "FBXSecne_Internal.h"
 #import "FBXMesh.h"
 #import "FBXMesh_Internal.h"
 #import "FBXLayerElementNormal.h"
 #import <fbxsdk.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface SwiftyFBXLoader ()
-@property (nonatomic) FbxScene* cScene;
-@end
-
-NS_ASSUME_NONNULL_END
-
-@implementation SwiftyFBXLoader
+@implementation SwiftyFBXLoader {
+    FbxManager* _manager;
+    FbxImporter* _importer;
+}
 
 - (instancetype)init
 {
@@ -35,38 +30,55 @@ NS_ASSUME_NONNULL_END
     self = [super init];
     if (self) {
         _URL = URL;
+        _manager = FbxManager::Create();
     }
+        
     return self;
+}
+
+- (void)dealloc {
+    if (_manager != NULL) {
+        _manager->Destroy();
+    }
+    if (_importer != NULL) {
+        _importer->Destroy();
+    }
+    _URL = nil;
+    
+    [super dealloc];
 }
 
 - (SwiftyFBXLoadResult *)load
 {
-    FbxManager* manager = FbxManager::Create();
-    FbxIOSettings* settings = FbxIOSettings::Create(manager, IOSROOT);
-    manager->SetIOSettings(settings);
+    if (_manager == NULL) {
+        _manager = FbxManager::Create();
+    }
+
+    FbxIOSettings* settings = FbxIOSettings::Create(_manager, IOSROOT);
+    _manager->SetIOSettings(settings);
     
     int fileFormatVersionMajor,  fileFormatVersionMinor,  fileFormatVersionRevision = 0;
     FbxManager::GetFileFormatVersion(fileFormatVersionMajor, fileFormatVersionMinor, fileFormatVersionRevision);
     
     int major,  minor,  revision = 0;
-    FbxImporter* importer = FbxImporter::Create(manager, "");
-    BOOL importResult = importer->Initialize(self.URL.path.UTF8String, -1, manager->GetIOSettings());
-    importer->GetFileVersion(major, minor, revision);
+    
+    if (_importer == NULL) {
+        _importer = FbxImporter::Create(_manager, "");
+    }
+    BOOL importResult = _importer->Initialize(self.URL.path.UTF8String, -1, _manager->GetIOSettings());
+    _importer->GetFileVersion(major, minor, revision);
     
     SwiftyFBXFileFormatVersion *formatVersion = [[SwiftyFBXFileFormatVersion alloc] initWithMajor:major minor:minor revision:revision];
         
     if (!importResult) {
-        NSString *message = [NSString stringWithCString:importer->GetStatus().GetErrorString() encoding:NSUTF8StringEncoding];
-        NSLog(@"[ERROR] Error Code=%d, %@", importer->GetStatus().GetCode(), message);
-        
-        importer->Destroy();
-        manager->Destroy();
-        
+        NSString *message = [NSString stringWithCString:_importer->GetStatus().GetErrorString() encoding:NSUTF8StringEncoding];
+        NSLog(@"[ERROR] Error Code=%d, %@", _importer->GetStatus().GetCode(), message);
+
         return [[SwiftyFBXLoadResult alloc] initWithResult:importResult formatVersion:formatVersion scene:NULL];
     }
     
-    FbxScene* cScene = FbxScene::Create(manager, "originalScene");
-    if (importer->Import(cScene)) {
+    FbxScene* cScene = FbxScene::Create(_manager, "originalScene");
+    if (_importer->Import(cScene)) {
         int count = cScene->GetMemberCount<FbxMesh>();
         NSLog(@"[INFO] Mesh %d", count);
     }
@@ -79,12 +91,7 @@ NS_ASSUME_NONNULL_END
 //    if (type == FbxNodeAttribute::eMesh) {
 //
 //    }
-    
-    _cScene = cScene;
-    
-    importer->Destroy();
-    manager->Destroy();
-    
+
     return result;
 }
 

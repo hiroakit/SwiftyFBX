@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FBXScene ()
 @property (nonatomic, readwrite, strong) NSMutableArray *meshs;
 - (instancetype)initWithCScene:(FbxScene* )cScene;
-//+ (instancetype)sceneWithCScene:(FbxScene* )cScene;
 @end
 
 NS_ASSUME_NONNULL_END

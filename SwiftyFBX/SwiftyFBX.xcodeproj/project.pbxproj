@@ -534,7 +534,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/fbx/20202/include/,
+					/usr/local/include,
 					"$(SRCROOT)/$(TARGET_NAME)",
 				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
@@ -545,16 +545,14 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/Cellar/fbx/20202/lib/,
-					"/**",
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -573,7 +571,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/fbx/20202/include/,
+					/usr/local/include,
 					"$(SRCROOT)/$(TARGET_NAME)",
 				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
@@ -584,15 +582,13 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/Cellar/fbx/20202/lib/,
-					"/**",
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MODULEMAP_FILE = "$(SRCROOT)/$(TARGETNAME)/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakit.SwiftyFBX;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

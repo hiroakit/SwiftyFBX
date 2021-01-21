@@ -11,16 +11,22 @@ public class FBXLoader {
 
     public static func load(url: URL) -> FBX {
         let result = SwiftyFBXLoader.load(with: url)
-                        
-        if let scene = result.scene {
-            print(scene.textureCount())
+        
+        guard let scene = result.scene else {
+            return FBX(scene: nil)
         }
         
-        let mesh: FBXMesh = result.scene?.meshs.first! as! FBXMesh
-        let _ = mesh.getControlPointsCount()
-        let _ = mesh.getElementNormalCount()
+        let fbx = FBX(scene: scene)
+        print("Meshs: \(scene.meshs.count)")
+        print("Textures: \(scene.textures.count)")
+        scene.textures.forEach { (texture) in
+            print("\t - " + texture.url.path)
+        }
         
-        let fbx = FBX()
+//        let mesh: FBXMesh = result.scene?.meshs.first! as! FBXMesh
+//        let _ = mesh.getControlPointsCount()
+//        let _ = mesh.getElementNormalCount()
+        
         return fbx
     }
 }

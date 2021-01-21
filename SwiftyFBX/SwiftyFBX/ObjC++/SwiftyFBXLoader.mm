@@ -44,8 +44,6 @@
         _importer->Destroy();
     }
     _URL = nil;
-    
-    [super dealloc];
 }
 
 - (SwiftyFBXLoadResult *)load
@@ -78,10 +76,11 @@
     }
     
     FbxScene* cScene = FbxScene::Create(_manager, "originalScene");
-    if (_importer->Import(cScene)) {
-        int count = cScene->GetMemberCount<FbxMesh>();
-        NSLog(@"[INFO] Mesh %d", count);
-    }
+    _importer->Import(cScene);
+//    if (_importer->Import(cScene)) {
+//        int count = cScene->GetMemberCount<FbxMesh>();
+//        NSLog(@"[INFO] Mesh %d", count);
+//    }
     
     FBXScene *scene = [[FBXScene alloc] initWithCScene:cScene];
     SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult formatVersion:formatVersion scene:scene];
@@ -122,17 +121,18 @@
     }
     
     FbxScene* cScene = FbxScene::Create(manager, "originalScene");
-    if (importer->Import(cScene)) {
-        int count = cScene->GetMemberCount<FbxMesh>();
-        NSLog(@"[INFO] Mesh %d", count);
-    }
+    importer->Import(cScene);
+//    if () {
+//        int count = cScene->GetMemberCount<FbxMesh>();
+//        NSLog(@"[INFO] Mesh %d", count);
+//    }
+    
     FbxMesh* cMesh = cScene->GetMember<FbxMesh>(0);
     FbxNodeAttribute::EType type = cMesh->GetAttributeType();
     if (type == FbxNodeAttribute::eMesh) {
         
     }
-    
-    
+        
     FBXScene *scene = [[FBXScene alloc] initWithCScene:cScene];
     SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult
                                                                 formatVersion:formatVersion

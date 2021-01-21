@@ -38,7 +38,7 @@
 
 - (int)getControlPointsCount
 {
-    return self.cMesh->GetControlPointsCount();
+    return 0;//self.cMesh->GetControlPointsCount();
 }
 
 - (FbxVector4* )getControlPoints

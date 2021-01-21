@@ -10,6 +10,7 @@
 #import "FBXDocument.h"
 #import "FBXScene.h"
 #import "FBXMesh.h"
+#import "FBXTexture.h"
 #import "FBXLayerContainer.h"
 #import "FBXLayerElement.h"
 #import "FBXLayerElementNormal.h"

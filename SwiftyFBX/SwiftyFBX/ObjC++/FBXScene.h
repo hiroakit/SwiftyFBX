@@ -11,7 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class FBXTexture;
+
 @interface FBXScene : FBXDocument
+@property (nonatomic, readonly) NSArray<FBXTexture*> *textures;
 @property (nonatomic, readonly) NSArray *markers;
 @property (nonatomic, readonly) NSArray *skeletons;
 @property (nonatomic, readonly, strong) NSArray *meshs;

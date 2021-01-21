@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import Commander
 import SwiftyFBX
 
-print("Run SwiftyFBX-CLI")
-let fileURL = URL(fileURLWithPath: "/Applications/Autodesk/FBX SDK/2020.0.1/samples/ConvertScene/box.fbx")
-let fbx = FBXLoader.load(url: fileURL)
-print("Result: hoge")
+// filename
+// e.g., "/Applications/Autodesk/FBX SDK/2020.0.1/samples/UVSample/sadface.fbx"
+let main = command { (filename: String) in
+    let fileURL = URL(fileURLWithPath: filename)
+    let _ = FBXLoader.load(url: fileURL)
+}
+
+main.run()
+

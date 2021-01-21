@@ -147,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D28F5D25A4E0D4007A7489 /* SwiftyFBX.framework in Frameworks */,
+				451B044125B5D6750040072F /* Commander in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +318,9 @@
 				45D28F5925A4E09E007A7489 /* PBXTargetDependency */,
 			);
 			name = "SwiftyFBX-CLI";
+			packageProductDependencies = (
+				451B044025B5D6750040072F /* Commander */,
+			);
 			productName = "SwiftyFBX-CLI";
 			productReference = 45D28F4F25A4E083007A7489 /* SwiftyFBX-CLI */;
 			productType = "com.apple.product-type.tool";
@@ -348,6 +352,9 @@
 				Base,
 			);
 			mainGroup = 45ACB76025A464A900ED565F;
+			packageReferences = (
+				451B043F25B5D6750040072F /* XCRemoteSwiftPackageReference "Commander" */,
+			);
 			productRefGroup = 45ACB76B25A464A900ED565F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -662,6 +669,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		451B043F25B5D6750040072F /* XCRemoteSwiftPackageReference "Commander" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylef/Commander";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		451B044025B5D6750040072F /* Commander */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 451B043F25B5D6750040072F /* XCRemoteSwiftPackageReference "Commander" */;
+			productName = Commander;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45ACB76125A464A900ED565F /* Project object */;
 }

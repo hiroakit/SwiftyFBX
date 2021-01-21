@@ -13,7 +13,6 @@
 		4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */; };
 		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; };
 		4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */; };
-		45182F5825B5E0270048E4F2 /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45182F5725B5E0270048E4F2 /* libfbxsdk.dylib */; };
 		451B044125B5D6750040072F /* Commander in Frameworks */ = {isa = PBXBuildFile; productRef = 451B044025B5D6750040072F /* Commander */; };
 		451B045125B5D8B10040072F /* SwiftyFBX.framework in Copy Files - Framework */ = {isa = PBXBuildFile; fileRef = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4520A66025B4780A009CB46A /* FBXTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520A65E25B4780A009CB46A /* FBXTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +33,7 @@
 		459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */; };
 		45ACB79425A467AB00ED565F /* FBXManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ACB79325A467AB00ED565F /* FBXManager.mm */; };
 		45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ACB7A825A46B7400ED565F /* FBXManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45C8C2F025B9C42100A01540 /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8C2EF25B9C42100A01540 /* libfbxsdk.dylib */; };
 		45D28F5225A4E083007A7489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D28F5125A4E083007A7489 /* main.swift */; };
 		45D28F5D25A4E0D4007A7489 /* SwiftyFBX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */; };
 		45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */; };
@@ -86,7 +86,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		450E321525A57D1300881CF5 /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = "../../../../../../../Applications/Autodesk/FBX SDK/2020.0.1/lib/clang/release/libfbxsdk.dylib"; sourceTree = "<group>"; };
 		450E322325A5807D00881CF5 /* FBXManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBXManager.swift; sourceTree = "<group>"; };
 		450E322625A580CB00881CF5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		450E322925A5818800881CF5 /* SwiftyFBX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFBX.h; sourceTree = "<group>"; };
@@ -94,7 +93,6 @@
 		4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXFileFormatVersion.mm; sourceTree = "<group>"; };
 		4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXLoadResult.h; sourceTree = "<group>"; };
 		4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXLoadResult.mm; sourceTree = "<group>"; };
-		4520A63825B424B6009CB46A /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = ../../../../../../usr/local/Cellar/fbx/20202/lib/libfbxsdk.dylib; sourceTree = "<group>"; };
 		4520A65E25B4780A009CB46A /* FBXTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXTexture.h; sourceTree = "<group>"; };
 		4520A65F25B4780A009CB46A /* FBXTexture.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXTexture.mm; sourceTree = "<group>"; };
 		452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElement.h; sourceTree = "<group>"; };
@@ -113,6 +111,7 @@
 		45ACB76E25A464A900ED565F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45ACB79325A467AB00ED565F /* FBXManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXManager.mm; sourceTree = "<group>"; };
 		45ACB7A825A46B7400ED565F /* FBXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXManager.h; sourceTree = "<group>"; };
+		45C8C2EF25B9C42100A01540 /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = ../../../../../../../usr/local/Cellar/fbx/20202/lib/libfbxsdk.dylib; sourceTree = "<group>"; };
 		45D28F4F25A4E083007A7489 /* fbx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fbx; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D28F5125A4E083007A7489 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXIOSettings.mm; sourceTree = "<group>"; };
@@ -138,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4520A63925B424B6009CB46A /* libfbxsdk.dylib in Frameworks */,
+				45C8C2F025B9C42100A01540 /* libfbxsdk.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,8 +246,7 @@
 		45D28F5C25A4E0D4007A7489 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4520A63825B424B6009CB46A /* libfbxsdk.dylib */,
-				450E321525A57D1300881CF5 /* libfbxsdk.dylib */,
+				45C8C2EF25B9C42100A01540 /* libfbxsdk.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

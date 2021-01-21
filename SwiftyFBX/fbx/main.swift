@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  SwiftyFBX-CLI
+//  fbx
 //
 //  Created by Hiroaki ENDOH on 2021/01/06.
 //

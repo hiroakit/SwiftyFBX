@@ -113,7 +113,7 @@
 		45ACB76E25A464A900ED565F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45ACB79325A467AB00ED565F /* FBXManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXManager.mm; sourceTree = "<group>"; };
 		45ACB7A825A46B7400ED565F /* FBXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXManager.h; sourceTree = "<group>"; };
-		45D28F4F25A4E083007A7489 /* SwiftyFBX-CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SwiftyFBX-CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45D28F4F25A4E083007A7489 /* fbx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fbx; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D28F5125A4E083007A7489 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXIOSettings.mm; sourceTree = "<group>"; };
 		45DA64C525A5840F00C77BD8 /* FBXIOSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXIOSettings.h; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				45ACB76C25A464A900ED565F /* SwiftyFBX */,
-				45D28F5025A4E083007A7489 /* SwiftyFBX-CLI */,
+				45D28F5025A4E083007A7489 /* fbx */,
 				45ACB76B25A464A900ED565F /* Products */,
 				45D28F5C25A4E0D4007A7489 /* Frameworks */,
 			);
@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				45ACB76A25A464A900ED565F /* SwiftyFBX.framework */,
-				45D28F4F25A4E083007A7489 /* SwiftyFBX-CLI */,
+				45D28F4F25A4E083007A7489 /* fbx */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,12 +236,12 @@
 			path = "ObjC++";
 			sourceTree = "<group>";
 		};
-		45D28F5025A4E083007A7489 /* SwiftyFBX-CLI */ = {
+		45D28F5025A4E083007A7489 /* fbx */ = {
 			isa = PBXGroup;
 			children = (
 				45D28F5125A4E083007A7489 /* main.swift */,
 			);
-			path = "SwiftyFBX-CLI";
+			path = fbx;
 			sourceTree = "<group>";
 		};
 		45D28F5C25A4E0D4007A7489 /* Frameworks */ = {
@@ -304,9 +304,9 @@
 			productReference = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		45D28F4E25A4E083007A7489 /* SwiftyFBX-CLI */ = {
+		45D28F4E25A4E083007A7489 /* fbx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45D28F5325A4E083007A7489 /* Build configuration list for PBXNativeTarget "SwiftyFBX-CLI" */;
+			buildConfigurationList = 45D28F5325A4E083007A7489 /* Build configuration list for PBXNativeTarget "fbx" */;
 			buildPhases = (
 				45D28F4B25A4E083007A7489 /* Sources */,
 				45D28F4C25A4E083007A7489 /* Frameworks */,
@@ -317,12 +317,12 @@
 			dependencies = (
 				45D28F5925A4E09E007A7489 /* PBXTargetDependency */,
 			);
-			name = "SwiftyFBX-CLI";
+			name = fbx;
 			packageProductDependencies = (
 				451B044025B5D6750040072F /* Commander */,
 			);
 			productName = "SwiftyFBX-CLI";
-			productReference = 45D28F4F25A4E083007A7489 /* SwiftyFBX-CLI */;
+			productReference = 45D28F4F25A4E083007A7489 /* fbx */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -360,7 +360,7 @@
 			projectRoot = "";
 			targets = (
 				45ACB76925A464A900ED565F /* SwiftyFBX */,
-				45D28F4E25A4E083007A7489 /* SwiftyFBX-CLI */,
+				45D28F4E25A4E083007A7489 /* fbx */,
 			);
 		};
 /* End PBXProject section */
@@ -659,7 +659,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45D28F5325A4E083007A7489 /* Build configuration list for PBXNativeTarget "SwiftyFBX-CLI" */ = {
+		45D28F5325A4E083007A7489 /* Build configuration list for PBXNativeTarget "fbx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45D28F5425A4E083007A7489 /* Debug */,

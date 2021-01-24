@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FBXMesh : FBXLayerContainer
 - (int)getControlPointsCount;
 - (int)getElementNormalCount;
+- (int)getPolygonCount;
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index;
 @end
 

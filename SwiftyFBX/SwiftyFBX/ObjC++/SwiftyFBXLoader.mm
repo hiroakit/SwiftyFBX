@@ -36,16 +36,6 @@
     return self;
 }
 
-- (void)dealloc {
-    if (_manager != NULL) {
-        _manager->Destroy();
-    }
-    if (_importer != NULL) {
-        _importer->Destroy();
-    }
-    _URL = nil;
-}
-
 - (SwiftyFBXLoadResult *)load
 {
     if (_manager == NULL) {
@@ -127,11 +117,11 @@
 //        NSLog(@"[INFO] Mesh %d", count);
 //    }
     
-    FbxMesh* cMesh = cScene->GetMember<FbxMesh>(0);
-    FbxNodeAttribute::EType type = cMesh->GetAttributeType();
-    if (type == FbxNodeAttribute::eMesh) {
-        
-    }
+//    FbxMesh* cMesh = cScene->GetMember<FbxMesh>(0);
+//    FbxNodeAttribute::EType type = cMesh->GetAttributeType();
+//    if (type == FbxNodeAttribute::eMesh) {
+//        
+//    }
         
     FBXScene *scene = [[FBXScene alloc] initWithCScene:cScene];
     SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult
@@ -143,9 +133,6 @@
 //    int elementNomalCount = [mesh getElementNormalCount];
 //    FBXLayerElementNormal *normal = [mesh getElementNormalAtIndex:0];
 
-    importer->Destroy();
-    manager->Destroy();
-    
     return result;
 }
 @end

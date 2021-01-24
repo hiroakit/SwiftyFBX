@@ -11,9 +11,17 @@
 #import "FBXMesh_Internal.h"
 #import "FBXTexture.h"
 #import "FBXTexture_Internal.h"
+#import "FBXSkeleton.h"
+#import "FBXSkeleton_Internal.h"
+#import "FBXCamera.h"
+#import "FBXCamera_Internal.h"
+#import "FBXLight.h"
+#import "FBXLight_Internal.h"
+#import "FBXSurfaceMaterial.h"
 #import "fbxsdk.h"
 
-@implementation FBXScene {
+@implementation FBXScene
+{
     FbxScene* _cScene;
 }
 
@@ -22,10 +30,14 @@
     self = [super init];
     if (self) {
         _cScene = NULL;
-        _markers = [NSArray array];
         _meshs = [NSMutableArray array];
         _textures = [NSMutableArray array];
+        _skeletons = [NSMutableArray array];
+        _cameras = [NSMutableArray array];
+        _lights = [NSMutableArray array];
+        _markers = [NSArray array];
     }
+    
     return self;
 }
 
@@ -51,26 +63,48 @@
     for (int i = 0; i < totalCount; i++) {
         FbxTexture* cTexture = cScene->GetMember<FbxTexture>(i);
         if (cTexture != NULL) {
-            FBXTexture *texture = [[FBXTexture alloc] initWithCTexture:cTexture];            
+            FBXTexture *texture = [[FBXTexture alloc] initWithCTexture:cTexture];
             [_textures addObject:texture];
+        }
+    }
+    
+    totalCount = cScene->GetMemberCount<FbxSkeleton>();
+    for (int i = 0; i < totalCount; i++) {
+        FbxSkeleton* cSkeleton = cScene->GetMember<FbxSkeleton>(i);
+        if (cSkeleton != NULL) {
+            FBXSkeleton *skeleton = [[FBXSkeleton alloc] initWithCSkeleton:cSkeleton];
+            [_skeletons addObject:skeleton];
+        }
+    }
+    
+    totalCount = cScene->GetMemberCount<FbxLight>();
+    for (int i = 0; i < totalCount; i++) {
+        FbxLight* cLight = _cScene->GetMember<FbxLight>(i);
+        if (cLight != NULL) {
+            FBXLight *light = [[FBXLight alloc] initWithCLight:cLight];            
+            [_lights addObject:light];
+        }
+    }
+
+    totalCount = cScene->GetMemberCount<FbxCamera>();
+    for (int i = 0; i < totalCount; i++) {
+        FbxCamera* cCamera = _cScene->GetMember<FbxCamera>(i);
+        if (cCamera != NULL) {
+            FBXCamera *camera = [[FBXCamera alloc] initWithCCamera:cCamera];
+            [_cameras addObject:camera];
         }
     }
     
     return self;
 }
 
-- (void)dealloc {
-    _cScene = NULL;
-    _markers = nil;
-    _meshs = nil;
-    _textures = nil;
-}
-
-+ (instancetype)createWithManager:(FBXManager *)manager sceneName:(NSString *)sceneName {
++ (instancetype)createWithManager:(FBXManager *)manager sceneName:(NSString *)sceneName
+{
     return [[FBXScene alloc] init];
 }
 
-+ (instancetype)sceneWithCScene:(FbxScene* )cScene {
++ (instancetype)sceneWithCScene:(FbxScene* )cScene
+{
     FBXScene *scene = [[FBXScene alloc] init];
     if(cScene == NULL) {
         return scene;
@@ -79,16 +113,58 @@
     return scene;
 }
 
-- (int)textureCount {
+- (NSUInteger)getPolygonCount
+{
+    int polygonCount = 0;
+    
+    for (FBXMesh *mesh in self.meshs) {
+        polygonCount += mesh.getPolygonCount;
+    }
+    
+    return polygonCount;
+}
+
+- (NSUInteger)getMaterialCount
+{
     if(_cScene == NULL) {
         return 0;
     }
-    return 0;
-    //_cScene->GetMemberCount<FbxTexture>();
+    return _cScene->GetMaterialCount();
 }
 
-- (int)getMemberCount {
-    return 0;
+- (FBXSurfaceMaterial*)getMaterialAtIndex:(int)index
+{
+    if (_cScene == NULL) {
+        return nil;
+    }
+    if (index < 0 || index > [self getMaterialCount]) {
+        return nil;
+    }
+    
+    FbxSurfaceMaterial* cMaterial = _cScene->GetMaterial(index);
+    if (cMaterial == NULL) {
+        return nil;
+    }
+    
+    return [[FBXSurfaceMaterial alloc] init];
+}
+
+- (FBXSurfaceMaterial*)getMaterialWithName:(NSString*)name
+{
+    if (_cScene == NULL) {
+        return nil;
+    }
+    if (name == nil || name.length < 1) {
+        return nil;
+    }
+    
+    const char *pName = [name cStringUsingEncoding:NSUTF8StringEncoding];
+    FbxSurfaceMaterial* cMaterial = _cScene->GetMaterial(pName);
+    if (cMaterial == NULL) {
+        return nil;
+    }
+    
+    return [[FBXSurfaceMaterial alloc] init];
 }
 
 @end

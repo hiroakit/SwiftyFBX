@@ -13,35 +13,44 @@
 		4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */; };
 		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; };
 		4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */; };
-		451B044125B5D6750040072F /* Commander in Frameworks */ = {isa = PBXBuildFile; productRef = 451B044025B5D6750040072F /* Commander */; };
-		451B045125B5D8B10040072F /* SwiftyFBX.framework in Copy Files - Framework */ = {isa = PBXBuildFile; fileRef = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4520A66025B4780A009CB46A /* FBXTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520A65E25B4780A009CB46A /* FBXTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4520A66125B4780A009CB46A /* FBXTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4520A65F25B4780A009CB46A /* FBXTexture.mm */; };
-		4520A66625B47827009CB46A /* FBXFileTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520A66425B47827009CB46A /* FBXFileTexture.h */; };
-		4520A66725B47827009CB46A /* FBXFileTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4520A66525B47827009CB46A /* FBXFileTexture.mm */; };
 		452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */; };
 		452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */; };
 		45455DA225B48EEA00D6D8A7 /* FBXSecne_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45455DA125B48EEA00D6D8A7 /* FBXSecne_Internal.h */; };
 		45455DB025B51B7400D6D8A7 /* FBXTexture_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45455DAF25B51B7400D6D8A7 /* FBXTexture_Internal.h */; };
+		455AFCD425BC07670000662E /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4590849125BBEC8A006DCF91 /* libfbxsdk.dylib */; };
+		455BE82425BD40380016F2A8 /* FBXCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 455BE82225BD40380016F2A8 /* FBXCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		455BE82525BD40380016F2A8 /* FBXCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = 455BE82325BD40380016F2A8 /* FBXCamera.mm */; };
+		455BE82725BD407E0016F2A8 /* FBXCamera_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 455BE82625BD407E0016F2A8 /* FBXCamera_Internal.h */; };
 		456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */; };
 		456F48C925AA9E2900B03DF2 /* FBXLayerElementNormal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */; };
 		456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */; };
 		456F48D325AA9FDF00B03DF2 /* FBXLayerContainer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */; };
+		4574CF4325BBF95200388277 /* SwiftyFBX.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */; };
 		4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */; };
+		4590849525BBECD2006DCF91 /* libfbxsdk.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 4590849125BBEC8A006DCF91 /* libfbxsdk.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4590849A25BBEE7E006DCF91 /* FBXSkeleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4590849825BBEE7E006DCF91 /* FBXSkeleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4590849B25BBEE7E006DCF91 /* FBXSkeleton.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4590849925BBEE7E006DCF91 /* FBXSkeleton.mm */; };
+		459084A025BBEF90006DCF91 /* FBXSkeleton_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4590849F25BBEF90006DCF91 /* FBXSkeleton_Internal.h */; };
 		459E916425A5C2CD008B1CC3 /* FBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916325A5C2CD008B1CC3 /* FBX.swift */; };
 		459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */; };
+		45ABD2EB25BD3798001DCF58 /* FBXSurfaceMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ABD2E925BD3798001DCF58 /* FBXSurfaceMaterial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45ABD2EC25BD3798001DCF58 /* FBXSurfaceMaterial.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD2EA25BD3798001DCF58 /* FBXSurfaceMaterial.mm */; };
+		45ABD2EF25BD3AAB001DCF58 /* FBXLight.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ABD2ED25BD3AAB001DCF58 /* FBXLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45ABD2F025BD3AAB001DCF58 /* FBXLight.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD2EE25BD3AAB001DCF58 /* FBXLight.mm */; };
+		45ABD2F225BD3AFA001DCF58 /* FBXLight_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ABD2F125BD3AFA001DCF58 /* FBXLight_Internal.h */; };
 		45ACB79425A467AB00ED565F /* FBXManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ACB79325A467AB00ED565F /* FBXManager.mm */; };
 		45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ACB7A825A46B7400ED565F /* FBXManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45C8C2F025B9C42100A01540 /* libfbxsdk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8C2EF25B9C42100A01540 /* libfbxsdk.dylib */; };
 		45D28F5225A4E083007A7489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D28F5125A4E083007A7489 /* main.swift */; };
-		45D28F5D25A4E0D4007A7489 /* SwiftyFBX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */; };
+		45D561F225BC11EE0093903B /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 45D561F125BC11EE0093903B /* ArgumentParser */; };
 		45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */; };
 		45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64C625A5846D00C77BD8 /* FBXImporter.h */; };
 		45DA64C925A5846D00C77BD8 /* FBXImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C725A5846D00C77BD8 /* FBXImporter.mm */; };
 		45DA64CF25A584E000C77BD8 /* FBXScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64CD25A584E000C77BD8 /* FBXScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45DA64D025A584E000C77BD8 /* FBXScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64CE25A584E000C77BD8 /* FBXScene.mm */; };
-		45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D325A5862F00C77BD8 /* FBXMesh.h */; };
+		45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D325A5862F00C77BD8 /* FBXMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45DA64D625A5862F00C77BD8 /* FBXMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64D425A5862F00C77BD8 /* FBXMesh.mm */; };
 		45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D925A5867500C77BD8 /* FBXNode.h */; };
 		45DA64DC25A5867500C77BD8 /* FBXNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64DA25A5867500C77BD8 /* FBXNode.mm */; };
@@ -53,25 +62,17 @@
 		45DA64EF25A59B4400C77BD8 /* SwiftyFBXLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64ED25A59B4400C77BD8 /* SwiftyFBXLoader.mm */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		45D28F5825A4E09E007A7489 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45ACB76125A464A900ED565F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45ACB76925A464A900ED565F;
-			remoteInfo = SwiftyFBX;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		450E321D25A57DF200881CF5 /* CopyFiles */ = {
+		4590849625BBECD2006DCF91 /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 10;
 			files = (
-				450E321E25A57E1200881CF5 /* libfbxsdk.dylib in CopyFiles */,
+				4574CF4325BBF95200388277 /* SwiftyFBX.framework in Embed Libraries */,
+				4590849525BBECD2006DCF91 /* libfbxsdk.dylib in Embed Libraries */,
 			);
+			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		45D28F4D25A4E083007A7489 /* CopyFiles */ = {
@@ -82,6 +83,16 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		45D561EF25BC110F0093903B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -99,19 +110,31 @@
 		452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBXLayerElement.m; sourceTree = "<group>"; };
 		45455DA125B48EEA00D6D8A7 /* FBXSecne_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXSecne_Internal.h; sourceTree = "<group>"; };
 		45455DAF25B51B7400D6D8A7 /* FBXTexture_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXTexture_Internal.h; sourceTree = "<group>"; };
+		455AFCD625BC09D60000662E /* fbx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fbx.entitlements; sourceTree = "<group>"; };
+		455BE82225BD40380016F2A8 /* FBXCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXCamera.h; sourceTree = "<group>"; };
+		455BE82325BD40380016F2A8 /* FBXCamera.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXCamera.mm; sourceTree = "<group>"; };
+		455BE82625BD407E0016F2A8 /* FBXCamera_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXCamera_Internal.h; sourceTree = "<group>"; };
 		456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerElementNormal.h; sourceTree = "<group>"; };
 		456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXLayerElementNormal.mm; sourceTree = "<group>"; };
 		456F48D025AA9FDF00B03DF2 /* FBXLayerContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLayerContainer.h; sourceTree = "<group>"; };
 		456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXLayerContainer.mm; sourceTree = "<group>"; };
 		4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXMesh_Internal.h; sourceTree = "<group>"; };
 		4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXLayerElementNormal_Internal.h; sourceTree = "<group>"; };
+		4590849125BBEC8A006DCF91 /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = ../../../../../../../usr/local/lib/libfbxsdk.dylib; sourceTree = "<group>"; };
+		4590849825BBEE7E006DCF91 /* FBXSkeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXSkeleton.h; sourceTree = "<group>"; };
+		4590849925BBEE7E006DCF91 /* FBXSkeleton.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXSkeleton.mm; sourceTree = "<group>"; };
+		4590849F25BBEF90006DCF91 /* FBXSkeleton_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXSkeleton_Internal.h; sourceTree = "<group>"; };
 		459E916325A5C2CD008B1CC3 /* FBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBX.swift; sourceTree = "<group>"; };
 		459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBXLoader.swift; sourceTree = "<group>"; };
+		45ABD2E925BD3798001DCF58 /* FBXSurfaceMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXSurfaceMaterial.h; sourceTree = "<group>"; };
+		45ABD2EA25BD3798001DCF58 /* FBXSurfaceMaterial.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXSurfaceMaterial.mm; sourceTree = "<group>"; };
+		45ABD2ED25BD3AAB001DCF58 /* FBXLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLight.h; sourceTree = "<group>"; };
+		45ABD2EE25BD3AAB001DCF58 /* FBXLight.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXLight.mm; sourceTree = "<group>"; };
+		45ABD2F125BD3AFA001DCF58 /* FBXLight_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXLight_Internal.h; sourceTree = "<group>"; };
 		45ACB76A25A464A900ED565F /* SwiftyFBX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyFBX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ACB76E25A464A900ED565F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45ACB79325A467AB00ED565F /* FBXManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXManager.mm; sourceTree = "<group>"; };
 		45ACB7A825A46B7400ED565F /* FBXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXManager.h; sourceTree = "<group>"; };
-		45C8C2EF25B9C42100A01540 /* libfbxsdk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfbxsdk.dylib; path = ../../../../../../../usr/local/Cellar/fbx/20202/lib/libfbxsdk.dylib; sourceTree = "<group>"; };
 		45D28F4F25A4E083007A7489 /* fbx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fbx; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D28F5125A4E083007A7489 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXIOSettings.mm; sourceTree = "<group>"; };
@@ -137,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45C8C2F025B9C42100A01540 /* libfbxsdk.dylib in Frameworks */,
+				455AFCD425BC07670000662E /* libfbxsdk.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45D28F5D25A4E0D4007A7489 /* SwiftyFBX.framework in Frameworks */,
-				451B044125B5D6750040072F /* Commander in Frameworks */,
+				45D561F225BC11EE0093903B /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,9 +239,9 @@
 				456F48D125AA9FDF00B03DF2 /* FBXLayerContainer.mm */,
 				452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */,
 				452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */,
-				456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */,
 				4586F83D25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h */,
 				456F48C725AA9E2900B03DF2 /* FBXLayerElementNormal.mm */,
+				456F48C625AA9E2900B03DF2 /* FBXLayerElementNormal.h */,
 				45DA64D325A5862F00C77BD8 /* FBXMesh.h */,
 				4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */,
 				45DA64D425A5862F00C77BD8 /* FBXMesh.mm */,
@@ -231,6 +253,17 @@
 				4520A65E25B4780A009CB46A /* FBXTexture.h */,
 				45455DAF25B51B7400D6D8A7 /* FBXTexture_Internal.h */,
 				4520A65F25B4780A009CB46A /* FBXTexture.mm */,
+				4590849825BBEE7E006DCF91 /* FBXSkeleton.h */,
+				4590849F25BBEF90006DCF91 /* FBXSkeleton_Internal.h */,
+				4590849925BBEE7E006DCF91 /* FBXSkeleton.mm */,
+				45ABD2E925BD3798001DCF58 /* FBXSurfaceMaterial.h */,
+				45ABD2EA25BD3798001DCF58 /* FBXSurfaceMaterial.mm */,
+				45ABD2ED25BD3AAB001DCF58 /* FBXLight.h */,
+				45ABD2F125BD3AFA001DCF58 /* FBXLight_Internal.h */,
+				45ABD2EE25BD3AAB001DCF58 /* FBXLight.mm */,
+				455BE82225BD40380016F2A8 /* FBXCamera.h */,
+				455BE82625BD407E0016F2A8 /* FBXCamera_Internal.h */,
+				455BE82325BD40380016F2A8 /* FBXCamera.mm */,
 			);
 			path = "ObjC++";
 			sourceTree = "<group>";
@@ -238,6 +271,7 @@
 		45D28F5025A4E083007A7489 /* fbx */ = {
 			isa = PBXGroup;
 			children = (
+				455AFCD625BC09D60000662E /* fbx.entitlements */,
 				45D28F5125A4E083007A7489 /* main.swift */,
 			);
 			path = fbx;
@@ -246,7 +280,7 @@
 		45D28F5C25A4E0D4007A7489 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				45C8C2EF25B9C42100A01540 /* libfbxsdk.dylib */,
+				4590849125BBEC8A006DCF91 /* libfbxsdk.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -258,12 +292,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45ABD2EF25BD3AAB001DCF58 /* FBXLight.h in Headers */,
 				45DA64CF25A584E000C77BD8 /* FBXScene.h in Headers */,
 				4520A66025B4780A009CB46A /* FBXTexture.h in Headers */,
+				45ABD2F225BD3AFA001DCF58 /* FBXLight_Internal.h in Headers */,
 				4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */,
+				459084A025BBEF90006DCF91 /* FBXSkeleton_Internal.h in Headers */,
 				456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */,
+				455BE82425BD40380016F2A8 /* FBXCamera.h in Headers */,
 				45DA64E725A58EF300C77BD8 /* FBXCollection.h in Headers */,
 				452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */,
+				4590849A25BBEE7E006DCF91 /* FBXSkeleton.h in Headers */,
 				456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */,
 				45DA64E125A58B1200C77BD8 /* FBXDocument.h in Headers */,
 				4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */,
@@ -273,7 +312,9 @@
 				450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */,
 				4513358825A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h in Headers */,
 				4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */,
+				45ABD2EB25BD3798001DCF58 /* FBXSurfaceMaterial.h in Headers */,
 				45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */,
+				455BE82725BD407E0016F2A8 /* FBXCamera_Internal.h in Headers */,
 				45455DA225B48EEA00D6D8A7 /* FBXSecne_Internal.h in Headers */,
 				45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */,
 				45DA64EE25A59B4400C77BD8 /* SwiftyFBXLoader.h in Headers */,
@@ -291,13 +332,15 @@
 				45ACB76625A464A900ED565F /* Sources */,
 				45ACB76725A464A900ED565F /* Frameworks */,
 				45ACB76825A464A900ED565F /* Resources */,
-				450E321D25A57DF200881CF5 /* CopyFiles */,
+				45D561EF25BC110F0093903B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SwiftyFBX;
+			packageProductDependencies = (
+			);
 			productName = SwiftyFBX;
 			productReference = 45ACB76A25A464A900ED565F /* SwiftyFBX.framework */;
 			productType = "com.apple.product-type.framework";
@@ -308,16 +351,16 @@
 			buildPhases = (
 				45D28F4B25A4E083007A7489 /* Sources */,
 				45D28F4C25A4E083007A7489 /* Frameworks */,
+				4590849625BBECD2006DCF91 /* Embed Libraries */,
 				45D28F4D25A4E083007A7489 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				45D28F5925A4E09E007A7489 /* PBXTargetDependency */,
 			);
 			name = fbx;
 			packageProductDependencies = (
-				451B044025B5D6750040072F /* Commander */,
+				45D561F125BC11EE0093903B /* ArgumentParser */,
 			);
 			productName = "SwiftyFBX-CLI";
 			productReference = 45D28F4F25A4E083007A7489 /* fbx */;
@@ -351,7 +394,7 @@
 			);
 			mainGroup = 45ACB76025A464A900ED565F;
 			packageReferences = (
-				451B043F25B5D6750040072F /* XCRemoteSwiftPackageReference "Commander" */,
+				45D561F025BC11EE0093903B /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = 45ACB76B25A464A900ED565F /* Products */;
 			projectDirPath = "";
@@ -379,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				456F48D325AA9FDF00B03DF2 /* FBXLayerContainer.mm in Sources */,
+				45ABD2F025BD3AAB001DCF58 /* FBXLight.mm in Sources */,
 				4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */,
 				4520A66125B4780A009CB46A /* FBXTexture.mm in Sources */,
 				452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */,
@@ -386,12 +430,15 @@
 				45DA64C925A5846D00C77BD8 /* FBXImporter.mm in Sources */,
 				45DA64EF25A59B4400C77BD8 /* SwiftyFBXLoader.mm in Sources */,
 				45DA64DC25A5867500C77BD8 /* FBXNode.mm in Sources */,
+				4590849B25BBEE7E006DCF91 /* FBXSkeleton.mm in Sources */,
 				45ACB79425A467AB00ED565F /* FBXManager.mm in Sources */,
 				45DA64D025A584E000C77BD8 /* FBXScene.mm in Sources */,
 				45DA64E225A58B1200C77BD8 /* FBXDocument.mm in Sources */,
+				455BE82525BD40380016F2A8 /* FBXCamera.mm in Sources */,
 				45DA64E825A58EF300C77BD8 /* FBXCollection.mm in Sources */,
 				459E916425A5C2CD008B1CC3 /* FBX.swift in Sources */,
 				45DA64D625A5862F00C77BD8 /* FBXMesh.mm in Sources */,
+				45ABD2EC25BD3798001DCF58 /* FBXSurfaceMaterial.mm in Sources */,
 				459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */,
 				450E322425A5807D00881CF5 /* FBXManager.swift in Sources */,
 				4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */,
@@ -408,14 +455,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		45D28F5925A4E09E007A7489 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45ACB76925A464A900ED565F /* SwiftyFBX */;
-			targetProxy = 45D28F5825A4E09E007A7489 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		45ACB77025A464A900ED565F /* Debug */ = {
@@ -618,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_ENTITLEMENTS = fbx/fbx.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KCACRD7592;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -631,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_ENTITLEMENTS = fbx/fbx.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KCACRD7592;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -673,21 +714,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		451B043F25B5D6750040072F /* XCRemoteSwiftPackageReference "Commander" */ = {
+		45D561F025BC11EE0093903B /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kylef/Commander";
+			repositoryURL = "https://github.com/apple/swift-argument-parser";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.1;
+				minimumVersion = 0.3.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		451B044025B5D6750040072F /* Commander */ = {
+		45D561F125BC11EE0093903B /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 451B043F25B5D6750040072F /* XCRemoteSwiftPackageReference "Commander" */;
-			productName = Commander;
+			package = 45D561F025BC11EE0093903B /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

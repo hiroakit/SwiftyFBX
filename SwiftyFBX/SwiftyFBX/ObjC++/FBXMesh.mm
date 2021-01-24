@@ -21,6 +21,7 @@
 {
     self = [super init];
     if (self) {
+        _cMesh = NULL;
     }
     return self;
 }
@@ -33,6 +34,7 @@
     }
     
     _cMesh = cMesh;
+    
     return self;
 }
 
@@ -67,9 +69,13 @@
     self.cMesh->GetElementTangent(index);
 }
 
-- (void)getPolygonCount
+- (int)getPolygonCount
 {
-    self.cMesh->GetPolygonCount();
+    if (self.cMesh == NULL) {
+        return 0;
+    }
+        
+    return self.cMesh->GetPolygonCount();
 }
 
 - (void)getElementPolygonGroupCount

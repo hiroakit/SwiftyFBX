@@ -2,7 +2,7 @@
 //  FBXTexture.mm
 //  SwiftyFBX
 //
-//  Created by hiroakit on 2021/01/17.
+//  Created by Hiroaki ENDOH on 2021/01/17.
 //
 
 #import "FBXTexture.h"
@@ -10,6 +10,15 @@
 #import "fbxsdk.h"
 
 @implementation FBXTexture
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _url = nil;
+    }
+    return self;
+}
 
 - (instancetype)initWithCTexture:(FbxTexture* )cTexture
 {
@@ -20,7 +29,9 @@
     
     FbxFileTexture* cFileTexture = FbxCast<FbxFileTexture>(cTexture);
     NSString *filePath = [NSString stringWithCString:cFileTexture->GetFileName() encoding:NSUTF8StringEncoding];
-    _url = [NSURL fileURLWithPath:filePath];
+    if (filePath != nil) {
+        _url = [NSURL fileURLWithPath:filePath];
+    }
     
     return self;
 }

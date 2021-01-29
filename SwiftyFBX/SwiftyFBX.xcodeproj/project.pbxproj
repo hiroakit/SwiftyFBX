@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		450E322425A5807D00881CF5 /* FBXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E322325A5807D00881CF5 /* FBXManager.swift */; };
 		450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */ = {isa = PBXBuildFile; fileRef = 450E322925A5818800881CF5 /* SwiftyFBX.h */; };
-		4513358825A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513358625A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h */; };
-		4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */; };
+		4513358825A85F6100773EC8 /* SwiftyFBXFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513358625A85F6100773EC8 /* SwiftyFBXFormat.h */; };
+		4513358925A85F6100773EC8 /* SwiftyFBXFormat.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513358725A85F6100773EC8 /* SwiftyFBXFormat.mm */; };
 		4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */; };
 		4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */; };
 		4520A66025B4780A009CB46A /* FBXTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520A65E25B4780A009CB46A /* FBXTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -100,8 +100,8 @@
 		450E322325A5807D00881CF5 /* FBXManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBXManager.swift; sourceTree = "<group>"; };
 		450E322625A580CB00881CF5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		450E322925A5818800881CF5 /* SwiftyFBX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyFBX.h; sourceTree = "<group>"; };
-		4513358625A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXFileFormatVersion.h; sourceTree = "<group>"; };
-		4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXFileFormatVersion.mm; sourceTree = "<group>"; };
+		4513358625A85F6100773EC8 /* SwiftyFBXFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXFormat.h; sourceTree = "<group>"; };
+		4513358725A85F6100773EC8 /* SwiftyFBXFormat.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXFormat.mm; sourceTree = "<group>"; };
 		4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyFBXLoadResult.h; sourceTree = "<group>"; };
 		4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SwiftyFBXLoadResult.mm; sourceTree = "<group>"; };
 		4520A65E25B4780A009CB46A /* FBXTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXTexture.h; sourceTree = "<group>"; };
@@ -221,8 +221,8 @@
 			children = (
 				45DA64EC25A59B4400C77BD8 /* SwiftyFBXLoader.h */,
 				45DA64ED25A59B4400C77BD8 /* SwiftyFBXLoader.mm */,
-				4513358625A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h */,
-				4513358725A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm */,
+				4513358625A85F6100773EC8 /* SwiftyFBXFormat.h */,
+				4513358725A85F6100773EC8 /* SwiftyFBXFormat.mm */,
 				4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */,
 				4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */,
 				45ACB7A825A46B7400ED565F /* FBXManager.h */,
@@ -310,7 +310,7 @@
 				45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */,
 				45455DB025B51B7400D6D8A7 /* FBXTexture_Internal.h in Headers */,
 				450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */,
-				4513358825A85F6100773EC8 /* SwiftyFBXFileFormatVersion.h in Headers */,
+				4513358825A85F6100773EC8 /* SwiftyFBXFormat.h in Headers */,
 				4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */,
 				45ABD2EB25BD3798001DCF58 /* FBXSurfaceMaterial.h in Headers */,
 				45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */,
@@ -423,7 +423,7 @@
 			files = (
 				456F48D325AA9FDF00B03DF2 /* FBXLayerContainer.mm in Sources */,
 				45ABD2F025BD3AAB001DCF58 /* FBXLight.mm in Sources */,
-				4513358925A85F6100773EC8 /* SwiftyFBXFileFormatVersion.mm in Sources */,
+				4513358925A85F6100773EC8 /* SwiftyFBXFormat.mm in Sources */,
 				4520A66125B4780A009CB46A /* FBXTexture.mm in Sources */,
 				452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */,
 				456F48C925AA9E2900B03DF2 /* FBXLayerElementNormal.mm in Sources */,

@@ -6,16 +6,18 @@
 //
 
 #import "SwiftyFBXLoadResult.h"
-#import "SwiftyFBXFileFormatVersion.h"
+#import "SwiftyFBXFormat.h"
 #import "FBXScene.h"
 
 @implementation SwiftyFBXLoadResult
-- (instancetype)initWithResult:(BOOL)result formatVersion:(SwiftyFBXFileFormatVersion *)formatVersion scene:(FBXScene *)scene
+- (instancetype)initWithResult:(BOOL)result
+                        format:(SwiftyFBXFormat *)format
+                         scene:(FBXScene *)scene
 {
     self = [super init];
     if (self) {
         _isSuccessful = result;
-        _formatVersion = formatVersion;
+        _format = format;
         _scene = scene;
     }
     return self;

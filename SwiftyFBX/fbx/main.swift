@@ -52,6 +52,7 @@ extension FBXCommand {
             }
             
             let fbx = FBXLoader.load(url: fileURL)
+            print("Version: " + fbx.format.versionString)
             print("Meshs: \(fbx.meshs.count) (\(fbx.getPolygonCount()) polygons)")
             print("Textures: \(fbx.textures.count)")
             fbx.textures.forEach { (texture) in

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class SwiftyFBXFileFormatVersion;
+@class SwiftyFBXFormat;
 @class FBXScene;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,8 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SwiftyFBXLoadResult : NSObject
 @property (nonatomic, readonly) BOOL isSuccessful;
 @property (nullable, nonatomic, readonly) FBXScene *scene;
-@property (nonatomic, readonly) SwiftyFBXFileFormatVersion *formatVersion;
-- (instancetype)initWithResult:(BOOL)result formatVersion:(SwiftyFBXFileFormatVersion *)formatVersion scene:(nullable FBXScene *)scene;
+@property (nonatomic, readonly) SwiftyFBXFormat *format;
+- (instancetype)initWithResult:(BOOL)result
+                        format:(SwiftyFBXFormat *)format
+                         scene:(nullable FBXScene *)scene;
 @end
 
 NS_ASSUME_NONNULL_END

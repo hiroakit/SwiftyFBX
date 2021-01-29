@@ -8,7 +8,7 @@
 import Foundation
 
 public class FBX {
-    let version: String
+    public let format: SwiftyFBXFormat
     let scene: FBXScene?
     
     public var meshs: Array<FBXMesh> {
@@ -53,8 +53,8 @@ public class FBX {
         return scene.cameras
     }
     
-    init(scene: FBXScene?) {
-        self.version = "1.0.0"
+    init(scene: FBXScene?, format: SwiftyFBXFormat) {
+        self.format = format
         self.scene = scene
     }
     

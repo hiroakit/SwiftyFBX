@@ -20,7 +20,7 @@
 #import "FBXLayerElementNormal.h"
 #import "SwiftyFBXLoader.h"
 #import "SwiftyFBXLoadResult.h"
-#import "SwiftyFBXFileFormatVersion.h"
+#import "SwiftyFBXFormat.h"
 
 //! Project version number for SwiftyFBX.
 FOUNDATION_EXPORT double SwiftyFBXVersionNumber;

@@ -7,7 +7,7 @@
 
 #import "SwiftyFBXLoader.h"
 #import "SwiftyFBXLoadResult.h"
-#import "SwiftyFBXFileFormatVersion.h"
+#import "SwiftyFBXFormat.h"
 #import "FBXScene.h"         
 #import "FBXSecne_Internal.h"
 #import "FBXMesh.h"
@@ -56,13 +56,17 @@
     BOOL importResult = _importer->Initialize(self.URL.path.UTF8String, -1, _manager->GetIOSettings());
     _importer->GetFileVersion(major, minor, revision);
     
-    SwiftyFBXFileFormatVersion *formatVersion = [[SwiftyFBXFileFormatVersion alloc] initWithMajor:major minor:minor revision:revision];
+    SwiftyFBXFormat *format = [[SwiftyFBXFormat alloc] initWithMajor:major
+                                                               minor:minor
+                                                            revision:revision];
         
     if (!importResult) {
         NSString *message = [NSString stringWithCString:_importer->GetStatus().GetErrorString() encoding:NSUTF8StringEncoding];
         NSLog(@"[ERROR] Error Code=%d, %@", _importer->GetStatus().GetCode(), message);
 
-        return [[SwiftyFBXLoadResult alloc] initWithResult:importResult formatVersion:formatVersion scene:NULL];
+        return [[SwiftyFBXLoadResult alloc] initWithResult:importResult
+                                                    format:format
+                                                     scene:NULL];
     }
     
     FbxScene* cScene = FbxScene::Create(_manager, "originalScene");
@@ -73,7 +77,9 @@
 //    }
     
     FBXScene *scene = [[FBXScene alloc] initWithCScene:cScene];
-    SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult formatVersion:formatVersion scene:scene];
+    SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult
+                                                                       format:format
+                                                                        scene:scene];
 //
 //    FbxMesh* mesh = scene->GetMember<FbxMesh>(0);
 //    FbxNodeAttribute::EType type = mesh->GetAttributeType();
@@ -98,7 +104,9 @@
     BOOL importResult = importer->Initialize(url.path.UTF8String, -1, manager->GetIOSettings());
     importer->GetFileVersion(major, minor, revision);
     
-    SwiftyFBXFileFormatVersion *formatVersion = [[SwiftyFBXFileFormatVersion alloc] initWithMajor:major minor:minor revision:revision];
+    SwiftyFBXFormat *format = [[SwiftyFBXFormat alloc] initWithMajor:major
+                                                               minor:minor
+                                                            revision:revision];
         
     if (!importResult) {
         NSString *message = [NSString stringWithCString:importer->GetStatus().GetErrorString() encoding:NSUTF8StringEncoding];
@@ -107,7 +115,9 @@
         importer->Destroy();
         manager->Destroy();
         
-        return [[SwiftyFBXLoadResult alloc] initWithResult:importResult formatVersion:formatVersion scene:NULL];
+        return [[SwiftyFBXLoadResult alloc] initWithResult:importResult
+                                                    format:format
+                                                     scene:NULL];
     }
     
     FbxScene* cScene = FbxScene::Create(manager, "originalScene");
@@ -125,7 +135,7 @@
         
     FBXScene *scene = [[FBXScene alloc] initWithCScene:cScene];
     SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult
-                                                                formatVersion:formatVersion
+                                                                       format:format
                                                                         scene:scene];
 //    FBXMesh *mesh = scene.meshs.firstObject;
 //    int controlPointsCount = [mesh getControlPointsCount];

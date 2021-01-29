@@ -6,12 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <fbxsdk.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FBXSurfaceMaterial : NSObject
-@property (nonatomic, readonly, getter=getName) NSString *name;
-- (NSString *)getName;
+@interface FBXSurfaceMaterial ()
+- (instancetype)initWithCMaterial:(FbxSurfaceMaterial* )cMaterial;
 @end
 
 NS_ASSUME_NONNULL_END

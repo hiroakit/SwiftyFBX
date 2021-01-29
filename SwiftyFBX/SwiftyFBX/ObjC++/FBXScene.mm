@@ -17,8 +17,11 @@
 #import "FBXCamera_Internal.h"
 #import "FBXLight.h"
 #import "FBXLight_Internal.h"
+#import "FBXPose.h"
+#import "FBXPose_Internal.h"
 #import "FBXSurfaceMaterial.h"
-#import "fbxsdk.h"
+#import "FBXSurfaceMaterial_Internal.h"
+#import <fbxsdk.h>
 
 @implementation FBXScene
 {
@@ -32,10 +35,15 @@
         _cScene = NULL;
         _meshs = [NSMutableArray array];
         _textures = [NSMutableArray array];
+        _materials = [NSMutableArray array];
         _skeletons = [NSMutableArray array];
         _cameras = [NSMutableArray array];
         _lights = [NSMutableArray array];
+        _poses = [NSMutableArray array];
         _markers = [NSArray array];
+        _nurbs = [NSArray array];
+        _patches = [NSArray array];
+        _lodgroups = [NSArray array];
     }
     
     return self;
@@ -94,7 +102,25 @@
             [_cameras addObject:camera];
         }
     }
+
+    totalCount = cScene->GetPoseCount();
+    for (int i = 0; i < totalCount; i++) {
+        FbxPose* cPose = _cScene->GetPose(i);
+        if (cPose != NULL) {
+            FBXPose *pose = [[FBXPose alloc] initWithCPose:cPose];
+            [_poses addObject:pose];
+        }
+    }
     
+    totalCount = _cScene->GetMaterialCount();
+    for (int i = 0; i < totalCount; i++) {
+        FbxSurfaceMaterial* cMaterial = _cScene->GetMaterial(i);
+        if (cMaterial != NULL) {
+            FBXSurfaceMaterial *material = [[FBXSurfaceMaterial alloc] initWithCMaterial:cMaterial];
+            [_materials addObject:material];
+        }
+    }
+
     return self;
 }
 

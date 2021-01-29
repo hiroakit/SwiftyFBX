@@ -6,12 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FBXLayerContainer.h"
+#import "FBXGeometry.h"
 @class FBXLayerElementNormal;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FBXMesh : FBXLayerContainer
+@interface FBXMesh : FBXGeometry
 - (int)getControlPointsCount;
 - (int)getElementNormalCount;
 - (int)getPolygonCount;

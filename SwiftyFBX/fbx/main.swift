@@ -62,6 +62,10 @@ extension FBXCommand {
                     print("\t - Nothing path in FBX")
                 }
             }
+            print("Materials: \(fbx.materials.count)")
+            fbx.materials.forEach { (material) in
+                print("\t - " + material.name)                
+            }
             print("Skeletons: \(fbx.skeletons.count)")
             print("Cameras: \(fbx.cameras.count)")
 //            fbx.cameras.forEach { (camera) in
@@ -71,6 +75,10 @@ extension FBXCommand {
 //            fbx.lights.forEach { (light) in
 //                print("\t - " + light.name())
 //            }
+            print("Poses: \(fbx.poses.count)")
+            fbx.poses.forEach { (pose) in
+                print("\t - " + pose.name)
+            }
         }
     }
 }

@@ -18,11 +18,11 @@ public class FBX {
         return scene.meshs
     }
 
-    public var materials: Array<FBXSkeleton> {
+    public var materials: Array<FBXSurfaceMaterial> {
         guard let scene = self.scene else {
             return []
         }
-        return scene.skeletons
+        return scene.materials
     }
     
     public var textures: Array<FBXTexture> {
@@ -51,6 +51,13 @@ public class FBX {
             return []
         }
         return scene.cameras
+    }
+    
+    public var poses: Array<FBXPose> {
+        guard let scene = self.scene else {
+            return []
+        }
+        return scene.poses
     }
     
     init(scene: FBXScene?, format: SwiftyFBXFormat) {

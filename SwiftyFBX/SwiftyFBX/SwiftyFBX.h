@@ -19,6 +19,7 @@
 #import "FBXLayerContainer.h"
 #import "FBXLayerElement.h"
 #import "FBXLayerElementNormal.h"
+#import "FBXColor.h"
 #import "SwiftyFBXLoader.h"
 #import "SwiftyFBXLoadResult.h"
 #import "SwiftyFBXFormat.h"

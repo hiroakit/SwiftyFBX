@@ -7,6 +7,7 @@
 
 #import "FBXSurfaceMaterial.h"
 #import "FBXSurfaceMaterial_Internal.h"
+#import "FBXColor.h"
 #import <fbxsdk.h>
 
 @implementation FBXSurfaceMaterial
@@ -32,6 +33,34 @@
     return self;
 }
 
+- (BOOL)isPhong
+{
+    if (_cMaterial == NULL) {
+        return NO;
+    }
+
+    return _cMaterial->GetClassId().Is(FbxSurfacePhong::ClassId);
+}
+
+- (BOOL)isLambert
+{
+    if (_cMaterial == NULL) {
+        return NO;
+    }
+    
+    return _cMaterial->GetClassId().Is(FbxSurfaceLambert::ClassId);
+}
+
+- (NSString *)getUUID
+{
+    if (_cMaterial == NULL) {
+        return nil;
+    }
+    
+    FbxUInt64 uuid = _cMaterial->GetUniqueID();
+    return [NSString stringWithFormat:@"%llu", uuid];
+}
+
 - (NSString *)getName
 {
     if (_cMaterial == NULL) {
@@ -46,6 +75,22 @@
     return [NSString stringWithCString:pName
                               encoding:NSUTF8StringEncoding];
 }
+
+- (NSString *)getInitialName
+{
+    if (_cMaterial == NULL) {
+        return @"";
+    }
+    
+    const char* pInitialName = _cMaterial->GetInitialName();
+    if (pInitialName == NULL) {
+        return @"";
+    }
+    
+    return [NSString stringWithCString:pInitialName
+                              encoding:NSUTF8StringEncoding];
+}
+
 
 - (NSString *)getShadingModelName
 {
@@ -139,7 +184,7 @@
                               encoding:NSUTF8StringEncoding];
 }
 
-- (NSString *)getDiffuse
+- (NSString *)getDiffuseName
 {
     if (_cMaterial == NULL) {
         return @"";
@@ -379,13 +424,157 @@
                               encoding:NSUTF8StringEncoding];
 }
 
-- (BOOL)isPhong
+- (NSString *)getShadingModel
 {
     if (_cMaterial == NULL) {
-        return NO;
+        return @"";
+    }
+    
+    FbxPropertyT<FbxString> name = _cMaterial->ShadingModel;
+    const char* pValue = name.Get().Buffer();
+    
+    return [NSString stringWithCString:pValue
+                              encoding:NSUTF8StringEncoding];
+
+}
+
+- (FBXColor *)getAmbient
+{
+    if (_cMaterial == NULL) {
+        return [FBXColor empty];
+    }
+    
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble3> cAmbient = cPhong->Ambient;
+    
+    return [[FBXColor alloc] initWithRed:cAmbient.Get()[0]
+                                   green:cAmbient.Get()[1]
+                                    blue:cAmbient.Get()[2]
+                                   alpha:0.0f];
+}
+
+- (FBXColor *)getDiffuse
+{
+    if (_cMaterial == NULL) {
+        return [FBXColor empty];
     }
 
-    return _cMaterial->GetClassId().Is(FbxSurfacePhong::ClassId);
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble3> cDiffuse = cPhong->Diffuse;
+    
+    return [[FBXColor alloc] initWithRed:cDiffuse.Get()[0]
+                                   green:cDiffuse.Get()[1]
+                                    blue:cDiffuse.Get()[2]
+                                   alpha:0.0f];
+}
+
+- (FBXColor *)getSpecular
+{
+    if (_cMaterial == NULL) {
+        return [FBXColor empty];
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble3> cSpecular = cPhong->Specular;
+    
+    return [[FBXColor alloc] initWithRed:cSpecular.Get()[0]
+                                   green:cSpecular.Get()[1]
+                                    blue:cSpecular.Get()[2]
+                                   alpha:0.0f];
+
+}
+
+- (CGFloat)getSpecularFactor
+{
+    if (_cMaterial == NULL) {
+        return 0.0f;
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble> cSpecularFactor = cPhong->SpecularFactor;
+    
+    return cSpecularFactor.Get();
+}
+
+- (FBXColor *)getEmissive
+{
+    if (_cMaterial == NULL) {
+        return [FBXColor empty];
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble3> cEmissive = cPhong->Emissive;
+    
+    return [[FBXColor alloc] initWithRed:cEmissive.Get()[0]
+                                   green:cEmissive.Get()[1]
+                                    blue:cEmissive.Get()[2]
+                                   alpha:0.0f];
+}
+
+- (FBXColor *)getTransparencyColor
+{
+    if (_cMaterial == NULL) {
+        return [FBXColor empty];
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble3> cTransparentColor = cPhong->TransparentColor;
+    
+    return [[FBXColor alloc] initWithRed:cTransparentColor.Get()[0]
+                                   green:cTransparentColor.Get()[1]
+                                    blue:cTransparentColor.Get()[2]
+                                   alpha:0.0f];
+}
+
+- (CGFloat)getTransparencyFactor
+{
+    if (_cMaterial == NULL) {
+        return 0.0f;
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble> cTransparencyFactor = cPhong->TransparencyFactor;
+    
+    return cTransparencyFactor.Get();
+}
+
+- (CGFloat)getShininess
+{
+    if (_cMaterial == NULL) {
+        return 0.0f;
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble> cShininess = cPhong->Shininess;
+    
+    return cShininess.Get();
+}
+
+- (FBXColor *)getReflectionColor
+{
+    if (_cMaterial == NULL) {
+        return [FBXColor empty];
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble3> cReflectionColor = cPhong->Reflection;
+    
+    return [[FBXColor alloc] initWithRed:cReflectionColor.Get()[0]
+                                   green:cReflectionColor.Get()[1]
+                                    blue:cReflectionColor.Get()[2]
+                                   alpha:0.0f];
+}
+
+- (CGFloat)getReflectionFactor
+{
+    if (_cMaterial == NULL) {
+        return 0.0f;
+    }
+
+    FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
+    FbxPropertyT<FbxDouble> cReflectionFactor = cPhong->ReflectionFactor;
+    
+    return cReflectionFactor.Get();
 }
 
 @end

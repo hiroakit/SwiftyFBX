@@ -26,25 +26,54 @@
 - (instancetype)initWithCCamera:(FbxCamera* )cCamera
 {
     self = [self init];
-    if (_cCamera != NULL) {
+    if (cCamera != NULL) {
         _cCamera = cCamera;
     }
     
     return self;
 }
 
-- (NSString *)name
+- (NSString *)getName
 {
     if (_cCamera == NULL) {
         return @"";
     }
-
-    NSString *name = [NSString stringWithCString:_cCamera->GetName() encoding:NSUTF8StringEncoding];
-    if (name == nil) {
+    
+    const char* pName = _cCamera->GetName();
+    if (pName == NULL) {
         return @"";
     }
+    
+    return [NSString stringWithCString:pName
+                              encoding:NSUTF8StringEncoding];
+}
 
-    return name;
+- (FBXCameraFormat)getFormat
+{
+    if (_cCamera == NULL) {
+        return FBXCameraFormatUnknown;
+    }
+    const FbxCamera::EFormat cFormat = _cCamera->GetFormat();
+    FBXCameraFormat format = FBXCameraFormat(cFormat);
+    
+    return format;
+}
+
+- (Position)getPosition
+{
+    Position position = { 0.0f, 0.0f, 0.0f };
+    if (_cCamera == NULL) {
+        return position;
+    }
+    
+    FbxVector4 camera = _cCamera->Position.Get();
+    if (camera.Length() >= 3) {
+        position.x = camera[0];
+        position.y = camera[1];
+        position.z = camera[2];
+    }
+    
+    return position;
 }
 
 @end

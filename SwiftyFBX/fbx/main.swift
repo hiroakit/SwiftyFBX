@@ -68,9 +68,11 @@ extension FBXCommand {
             }
             print("Skeletons: \(fbx.skeletons.count)")
             print("Cameras: \(fbx.cameras.count)")
-//            fbx.cameras.forEach { (camera) in
-//                print("\t - " + camera.name())
-//            }
+            fbx.cameras.forEach { (camera) in
+                print("\t - Name: " + (camera.name == "" ? "Unknown" : camera.name))
+                print("\t\t - Format code: " + "\(camera.format.rawValue)")
+                print("\t\t - Postion (x, y, z): " + "\(camera.position.x), " + "\(camera.position.y), " + "\(camera.position.z)")
+            }
             print("Lights: \(fbx.lights.count)")
 //            fbx.lights.forEach { (light) in
 //                print("\t - " + light.name())

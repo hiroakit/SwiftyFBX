@@ -64,7 +64,7 @@ extension FBXCommand {
             }
             print("Materials: \(fbx.materials.count)")
             fbx.materials.forEach { (material) in
-                print("\t - " + material.name)                
+                print("\t - Name: " + (material.name == "" ? "Unknown" : material.name))
             }
             print("Skeletons: \(fbx.skeletons.count)")
             print("Cameras: \(fbx.cameras.count)")
@@ -80,7 +80,7 @@ extension FBXCommand {
             }
             print("Poses: \(fbx.poses.count)")
             fbx.poses.forEach { (pose) in
-                print("\t - " + pose.name)
+                print("\t - Name: " + (pose.name == "" ? "Unknown" : pose.name))
             }
         }
     }

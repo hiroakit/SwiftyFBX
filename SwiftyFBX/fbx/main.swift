@@ -74,9 +74,10 @@ extension FBXCommand {
                 print("\t\t - Postion (x, y, z): " + "\(camera.position.x), " + "\(camera.position.y), " + "\(camera.position.z)")
             }
             print("Lights: \(fbx.lights.count)")
-//            fbx.lights.forEach { (light) in
-//                print("\t - " + light.name())
-//            }
+            fbx.lights.forEach { (light) in
+                print("\t - Name: " + (light.name == "" ? "Unknown" : light.name))
+                print("\t\t - LightType code: " + "\(light.lightType.rawValue)")
+            }
             print("Poses: \(fbx.poses.count)")
             fbx.poses.forEach { (pose) in
                 print("\t - " + pose.name)

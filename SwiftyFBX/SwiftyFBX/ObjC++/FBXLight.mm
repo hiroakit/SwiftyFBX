@@ -34,7 +34,7 @@
     return self;
 }
 
-- (NSString *)name
+- (NSString *)getName
 {
     if (_cLight == NULL) {
         return @"";
@@ -47,4 +47,17 @@
 
     return name;
 }
+
+- (FBXLightType)getLightType
+{
+    if (_cLight == NULL) {
+        return FBXLightTypeUnknown;
+    }
+    
+    const FbxLight::EType cLightType = _cLight->LightType;
+    FBXLightType lightType = FBXLightType(cLightType);
+    
+    return lightType;
+}
+
 @end

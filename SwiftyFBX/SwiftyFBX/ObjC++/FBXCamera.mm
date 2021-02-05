@@ -61,7 +61,7 @@
 
 - (Position)getPosition
 {
-    Position position = { 0.0f, 0.0f, 0.0f };
+    Position position = PositionZero;
     if (_cCamera == NULL) {
         return position;
     }
@@ -73,6 +73,10 @@
         position.z = camera[2];
     }
     
+    // The following methods can't take a value from FbxNode of FbxCamera
+    // FbxNode* node = _cCamera->GetNode();
+    // FbxDouble3 translation = node->LclTranslation.Get();
+        
     return position;
 }
 

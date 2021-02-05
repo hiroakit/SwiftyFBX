@@ -123,6 +123,7 @@ extension FBXCommand {
             fbx.lights.forEach { (light) in
                 print("\t - Name: " + (light.name == "" ? "Unknown" : light.name))
                 print("\t\t - LightType: " + "\(light.lightTypeName)")
+                print("\t\t - Local translation (x,y,z): \(light.translation.x) \(light.translation.y) \(light.translation.z)")
             }
 //            print("Poses: \(fbx.poses.count)")
 //            fbx.poses.forEach { (pose) in

@@ -27,10 +27,12 @@ typedef NS_ENUM(int, FBXLightType)
 @property (nonatomic, readonly, getter=getName) NSString *name;
 @property (nonatomic, readonly, getter=getLightType) FBXLightType lightType;
 @property (nonatomic, readonly, getter=getLightTypeName) NSString *lightTypeName;
+@property (nonatomic, readonly, getter=getTranslation) Position translation;
 
 - (NSString *)getName;
 - (FBXLightType)getLightType;
 - (NSString *)getLightTypeName;
+- (Position)getTranslation;
 @end
 
 NS_ASSUME_NONNULL_END

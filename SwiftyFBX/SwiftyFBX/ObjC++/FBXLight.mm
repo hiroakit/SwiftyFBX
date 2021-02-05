@@ -7,6 +7,7 @@
 
 #import "FBXLight.h"
 #import "FBXLight_Internal.h"
+#import "FBXStruct.h"
 #import "fbxsdk.h"
 
 @implementation FBXLight
@@ -69,4 +70,16 @@
     
     return @"Unknow";
 }
+
+- (Position)getTranslation
+{
+    if (_cLight == NULL) {
+        return PositionZero;
+    }
+    
+    FbxNode* node = _cLight->GetNode();
+    FbxDouble3 translation = node->LclTranslation.Get();    
+    return PositionMake(translation[0], translation[1], translation[2]);
+}
+
 @end

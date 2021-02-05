@@ -52,11 +52,12 @@
 		45ABD2F225BD3AFA001DCF58 /* FBXLight_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ABD2F125BD3AFA001DCF58 /* FBXLight_Internal.h */; };
 		45ACB79425A467AB00ED565F /* FBXManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ACB79325A467AB00ED565F /* FBXManager.mm */; };
 		45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ACB7A825A46B7400ED565F /* FBXManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45C1BAA525C662D800D7D9FE /* FBXStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C1BAA425C662D800D7D9FE /* FBXStruct.h */; };
+		45C1BAA525C662D800D7D9FE /* FBXStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C1BAA425C662D800D7D9FE /* FBXStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45CFC37B25C6823B00DAD79C /* FBXColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CFC37925C6823B00DAD79C /* FBXColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45CFC37C25C6823B00DAD79C /* FBXColor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45CFC37A25C6823B00DAD79C /* FBXColor.mm */; };
 		45D28F5225A4E083007A7489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D28F5125A4E083007A7489 /* main.swift */; };
 		45D561F225BC11EE0093903B /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 45D561F125BC11EE0093903B /* ArgumentParser */; };
+		45D64DA625CD9AD20003E43C /* FBXStruct.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D64DA525CD9AD20003E43C /* FBXStruct.mm */; };
 		45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */; };
 		45DA64C825A5846D00C77BD8 /* FBXImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64C625A5846D00C77BD8 /* FBXImporter.h */; };
 		45DA64C925A5846D00C77BD8 /* FBXImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64C725A5846D00C77BD8 /* FBXImporter.mm */; };
@@ -161,6 +162,7 @@
 		45CFC37A25C6823B00DAD79C /* FBXColor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXColor.mm; sourceTree = "<group>"; };
 		45D28F4F25A4E083007A7489 /* fbx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fbx; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D28F5125A4E083007A7489 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		45D64DA525CD9AD20003E43C /* FBXStruct.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXStruct.mm; sourceTree = "<group>"; };
 		45DA64C125A583FA00C77BD8 /* FBXIOSettings.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXIOSettings.mm; sourceTree = "<group>"; };
 		45DA64C525A5840F00C77BD8 /* FBXIOSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXIOSettings.h; sourceTree = "<group>"; };
 		45DA64C625A5846D00C77BD8 /* FBXImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXImporter.h; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				4513359025A861A700773EC8 /* SwiftyFBXLoadResult.h */,
 				4513359125A861A700773EC8 /* SwiftyFBXLoadResult.mm */,
 				45C1BAA425C662D800D7D9FE /* FBXStruct.h */,
+				45D64DA525CD9AD20003E43C /* FBXStruct.mm */,
 				45CFC37925C6823B00DAD79C /* FBXColor.h */,
 				45CFC37A25C6823B00DAD79C /* FBXColor.mm */,
 				45A6CADC25C6A63100F8EDB5 /* FBXAnimStack_Internal.h */,
@@ -489,6 +492,7 @@
 				459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */,
 				450E322425A5807D00881CF5 /* FBXManager.swift in Sources */,
 				456EC0C225C40E2500264AAB /* FBXPose.mm in Sources */,
+				45D64DA625CD9AD20003E43C /* FBXStruct.mm in Sources */,
 				4513359325A861A700773EC8 /* SwiftyFBXLoadResult.mm in Sources */,
 				45DA64C225A583FA00C77BD8 /* FBXIOSettings.mm in Sources */,
 			);

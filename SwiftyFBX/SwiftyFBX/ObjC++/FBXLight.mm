@@ -60,4 +60,13 @@
     return lightType;
 }
 
+- (NSString *)getLightTypeName
+{
+    FBXLightType type = self.lightType;
+    if (type > -1) {
+        return FBXLightTypeNames[type];
+    }
+    
+    return @"Unknow";
+}
 @end

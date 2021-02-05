@@ -59,6 +59,13 @@ public class FBX {
         }
         return scene.poses
     }
+
+    public var animationStacks: Array<FBXAnimStack> {
+        guard let scene = self.scene else {
+            return []
+        }
+        return scene.animationStacks
+    }
     
     init(scene: FBXScene?, format: SwiftyFBXFormat) {
         self.format = format

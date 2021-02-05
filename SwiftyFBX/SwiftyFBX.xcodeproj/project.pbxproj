@@ -42,6 +42,9 @@
 		459084A025BBEF90006DCF91 /* FBXSkeleton_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4590849F25BBEF90006DCF91 /* FBXSkeleton_Internal.h */; };
 		459E916425A5C2CD008B1CC3 /* FBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916325A5C2CD008B1CC3 /* FBX.swift */; };
 		459E916E25A5C3F0008B1CC3 /* FBXLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */; };
+		45A6CADA25C6A50800F8EDB5 /* FBXAnimStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 45A6CAD825C6A50800F8EDB5 /* FBXAnimStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45A6CADB25C6A50800F8EDB5 /* FBXAnimStack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45A6CAD925C6A50800F8EDB5 /* FBXAnimStack.mm */; };
+		45A6CADD25C6A63100F8EDB5 /* FBXAnimStack_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45A6CADC25C6A63100F8EDB5 /* FBXAnimStack_Internal.h */; };
 		45ABD2EB25BD3798001DCF58 /* FBXSurfaceMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ABD2E925BD3798001DCF58 /* FBXSurfaceMaterial.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45ABD2EC25BD3798001DCF58 /* FBXSurfaceMaterial.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ABD2EA25BD3798001DCF58 /* FBXSurfaceMaterial.mm */; };
 		45ABD2EF25BD3AAB001DCF58 /* FBXLight.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ABD2ED25BD3AAB001DCF58 /* FBXLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -141,6 +144,9 @@
 		4590849F25BBEF90006DCF91 /* FBXSkeleton_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXSkeleton_Internal.h; sourceTree = "<group>"; };
 		459E916325A5C2CD008B1CC3 /* FBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBX.swift; sourceTree = "<group>"; };
 		459E916D25A5C3F0008B1CC3 /* FBXLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBXLoader.swift; sourceTree = "<group>"; };
+		45A6CAD825C6A50800F8EDB5 /* FBXAnimStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXAnimStack.h; sourceTree = "<group>"; };
+		45A6CAD925C6A50800F8EDB5 /* FBXAnimStack.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXAnimStack.mm; sourceTree = "<group>"; };
+		45A6CADC25C6A63100F8EDB5 /* FBXAnimStack_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXAnimStack_Internal.h; sourceTree = "<group>"; };
 		45ABD2E925BD3798001DCF58 /* FBXSurfaceMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXSurfaceMaterial.h; sourceTree = "<group>"; };
 		45ABD2EA25BD3798001DCF58 /* FBXSurfaceMaterial.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXSurfaceMaterial.mm; sourceTree = "<group>"; };
 		45ABD2ED25BD3AAB001DCF58 /* FBXLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXLight.h; sourceTree = "<group>"; };
@@ -291,6 +297,9 @@
 				45C1BAA425C662D800D7D9FE /* FBXStruct.h */,
 				45CFC37925C6823B00DAD79C /* FBXColor.h */,
 				45CFC37A25C6823B00DAD79C /* FBXColor.mm */,
+				45A6CADC25C6A63100F8EDB5 /* FBXAnimStack_Internal.h */,
+				45A6CAD825C6A50800F8EDB5 /* FBXAnimStack.h */,
+				45A6CAD925C6A50800F8EDB5 /* FBXAnimStack.mm */,
 			);
 			path = "ObjC++";
 			sourceTree = "<group>";
@@ -335,6 +344,7 @@
 				45273E6825C418550060B3C1 /* FBXGeometry.h in Headers */,
 				45273E6B25C41AE00060B3C1 /* FBXSurfaceMaterial_Internal.h in Headers */,
 				4590849A25BBEE7E006DCF91 /* FBXSkeleton.h in Headers */,
+				45A6CADA25C6A50800F8EDB5 /* FBXAnimStack.h in Headers */,
 				456F48C825AA9E2900B03DF2 /* FBXLayerElementNormal.h in Headers */,
 				45DA64E125A58B1200C77BD8 /* FBXDocument.h in Headers */,
 				4513359225A861A700773EC8 /* SwiftyFBXLoadResult.h in Headers */,
@@ -344,6 +354,7 @@
 				450E322A25A5818800881CF5 /* SwiftyFBX.h in Headers */,
 				4513358825A85F6100773EC8 /* SwiftyFBXFormat.h in Headers */,
 				4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */,
+				45A6CADD25C6A63100F8EDB5 /* FBXAnimStack_Internal.h in Headers */,
 				45ABD2EB25BD3798001DCF58 /* FBXSurfaceMaterial.h in Headers */,
 				45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */,
 				455BE82725BD407E0016F2A8 /* FBXCamera_Internal.h in Headers */,
@@ -462,6 +473,7 @@
 				452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */,
 				456F48C925AA9E2900B03DF2 /* FBXLayerElementNormal.mm in Sources */,
 				45DA64C925A5846D00C77BD8 /* FBXImporter.mm in Sources */,
+				45A6CADB25C6A50800F8EDB5 /* FBXAnimStack.mm in Sources */,
 				45DA64EF25A59B4400C77BD8 /* SwiftyFBXLoader.mm in Sources */,
 				45DA64DC25A5867500C77BD8 /* FBXNode.mm in Sources */,
 				4590849B25BBEE7E006DCF91 /* FBXSkeleton.mm in Sources */,

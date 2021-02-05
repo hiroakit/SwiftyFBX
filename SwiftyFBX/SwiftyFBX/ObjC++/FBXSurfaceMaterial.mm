@@ -473,6 +473,9 @@
     if (_cMaterial == NULL) {
         return [FBXColor empty];
     }
+    if (!self.isPhong) {
+        return [FBXColor empty];
+    }
 
     FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
     FbxPropertyT<FbxDouble3> cSpecular = cPhong->Specular;
@@ -489,7 +492,10 @@
     if (_cMaterial == NULL) {
         return 0.0f;
     }
-
+    if (!self.isPhong) {
+        return 0.0f;
+    }
+    
     FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
     FbxPropertyT<FbxDouble> cSpecularFactor = cPhong->SpecularFactor;
     
@@ -543,6 +549,9 @@
     if (_cMaterial == NULL) {
         return 0.0f;
     }
+    if (!self.isPhong) {
+        return 0.0f;
+    }
 
     FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
     FbxPropertyT<FbxDouble> cShininess = cPhong->Shininess;
@@ -553,6 +562,9 @@
 - (FBXColor *)getReflectionColor
 {
     if (_cMaterial == NULL) {
+        return [FBXColor empty];
+    }
+    if (!self.isPhong) {
         return [FBXColor empty];
     }
 
@@ -570,7 +582,10 @@
     if (_cMaterial == NULL) {
         return 0.0f;
     }
-
+    if (!self.isPhong) {
+        return 0.0f;
+    }
+    
     FbxSurfacePhong* cPhong = (FbxSurfacePhong*)_cMaterial;
     FbxPropertyT<FbxDouble> cReflectionFactor = cPhong->ReflectionFactor;
     

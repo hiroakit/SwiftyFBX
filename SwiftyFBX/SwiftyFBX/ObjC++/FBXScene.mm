@@ -21,6 +21,8 @@
 #import "FBXPose_Internal.h"
 #import "FBXSurfaceMaterial.h"
 #import "FBXSurfaceMaterial_Internal.h"
+#import "FBXAnimStack.h"
+#import "FBXAnimStack_Internal.h"
 #import <fbxsdk.h>
 
 @implementation FBXScene
@@ -40,6 +42,7 @@
         _cameras = [NSMutableArray array];
         _lights = [NSMutableArray array];
         _poses = [NSMutableArray array];
+        _animationStacks = [NSMutableArray array];
         _markers = [NSArray array];
         _nurbs = [NSArray array];
         _patches = [NSArray array];
@@ -111,6 +114,16 @@
             [_poses addObject:pose];
         }
     }
+
+//    totalCount = cScene->GetCharacterPoseCount();
+//    for (int i = 0; i < totalCount; i++) {
+//        FbxCharacterPose* cPose = _cScene->GetCharacterPose(i);
+//        if (cPose != NULL) {
+//            // FBXPose *pose = [[FBXPose alloc] initWithCPose:cPose];
+//            //[_poses addObject:@"hoge"];
+//        }
+//    }
+
     
     totalCount = _cScene->GetMaterialCount();
     for (int i = 0; i < totalCount; i++) {
@@ -118,6 +131,15 @@
         if (cMaterial != NULL) {
             FBXSurfaceMaterial *material = [[FBXSurfaceMaterial alloc] initWithCMaterial:cMaterial];
             [_materials addObject:material];
+        }
+    }
+
+    totalCount = _cScene->GetSrcObjectCount<FbxAnimStack>();
+    for (int i = 0; i < totalCount; i++) {
+        FbxAnimStack* cAnimStack = _cScene->GetSrcObject<FbxAnimStack>(i);
+        if (cAnimStack != NULL) {
+            FBXAnimStack *animStack = [[FBXAnimStack alloc] initWithCAnimStack:cAnimStack];
+            [_animationStacks addObject:animStack];
         }
     }
 
@@ -193,4 +215,38 @@
     return [[FBXSurfaceMaterial alloc] init];
 }
 
+- (FBXAnimStack *)getCurrentAnimationStack
+{
+    if (_cScene == NULL) {
+        return nil;
+    }
+    
+    FbxAnimStack* stack = _cScene->GetCurrentAnimationStack();
+    if (stack == NULL) {
+        return nil;
+    }
+
+    return [[FBXAnimStack alloc] initWithCAnimStack:stack];
+}
+
+- (FBXAnimStack *)getAnimationStackAtIndex:(int)index
+{
+    if (_cScene == NULL) {
+        return nil;
+    }
+    
+    int count = _cScene->GetSrcObjectCount<FbxAnimStack>();
+    if (index < 0 || index >= count) {
+        return nil;
+    }
+    
+    FbxAnimStack* stack = _cScene->GetSrcObject<FbxAnimStack>(index);
+    if (stack == NULL) {
+        return nil;
+    }
+    
+    return [[FBXAnimStack alloc] initWithCAnimStack:stack];
+}
+
 @end
+

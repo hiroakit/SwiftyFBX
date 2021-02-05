@@ -40,6 +40,9 @@ extension FBXCommand {
         // e.g., "/Applications/Autodesk/FBX SDK/2020.0.1/samples/UVSample/sadface.fbx"
         @Argument(help: "FBX file path")
         var filePath: String?
+        
+        @Flag(help: "Output texture path only.")
+        var isTexturePathOnly: Bool = false
 
         mutating func run() throws {
             guard let path = self.filePath else {
@@ -52,6 +55,16 @@ extension FBXCommand {
             }
             
             let fbx = FBXLoader.load(url: fileURL)
+            
+            guard !isTexturePathOnly else {
+                fbx.textures.forEach { (texture) in
+                    if let url = texture.url {
+                        print(url.relativePath)                        
+                    }
+                }
+                return
+            }
+            
             print("Version: " + fbx.format.versionString)
             print("Meshs: \(fbx.meshs.count) (\(fbx.getPolygonCount()) polygons)")
             print("Textures: \(fbx.textures.count)")
@@ -109,11 +122,16 @@ extension FBXCommand {
             print("Lights: \(fbx.lights.count)")
             fbx.lights.forEach { (light) in
                 print("\t - Name: " + (light.name == "" ? "Unknown" : light.name))
-                print("\t\t - LightType code: " + "\(light.lightType.rawValue)")
+                print("\t\t - LightType: " + "\(light.lightTypeName)")
             }
-            print("Poses: \(fbx.poses.count)")
-            fbx.poses.forEach { (pose) in
-                print("\t - Name: " + (pose.name == "" ? "Unknown" : pose.name))
+//            print("Poses: \(fbx.poses.count)")
+//            fbx.poses.forEach { (pose) in
+//                print("\t - Name: " + (pose.name == "" ? "Unknown" : pose.name))
+//            }
+            print("Animations: \(fbx.animationStacks.count)")
+            fbx.animationStacks.forEach { (animationStack) in
+                print("\t - Name: " + (animationStack.name == "" ? "Unknown" : animationStack.name))
+                print("\t\t - Frames: \(animationStack.frameCount)")
             }
         }
     }

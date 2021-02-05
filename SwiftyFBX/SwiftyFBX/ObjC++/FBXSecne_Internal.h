@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "fbxsdk.h"
+#import <fbxsdk.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class FBXCamera;
 @class FBXLight;
 @class FBXPose;
+@class FBXAnimStack;
 
 @interface FBXScene ()
 @property (nonatomic, readwrite, strong) NSMutableArray<FBXMesh*> *meshs;
@@ -26,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readwrite, strong) NSMutableArray<FBXCamera*> *cameras;
 @property (nonatomic, readwrite, strong) NSMutableArray<FBXLight*> *lights;
 @property (nonatomic, readwrite, strong) NSMutableArray<FBXPose*> *poses;
-
+@property (nonatomic, readwrite, strong) NSMutableArray<FBXAnimStack*> *animationStacks;
 - (instancetype)initWithCScene:(FbxScene* )cScene;
 @end
 

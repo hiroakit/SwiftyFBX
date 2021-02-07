@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 static NSArray<NSString*> *const FBXLightTypeNames = @[@"Point", @"Directional", @"Spot", @"Area", @"Volume"];
 
+@class FBXNode;
+
 @interface FBXLight : NSObject
 
 typedef NS_ENUM(int, FBXLightType)
@@ -28,11 +30,13 @@ typedef NS_ENUM(int, FBXLightType)
 @property (nonatomic, readonly, getter=getLightType) FBXLightType lightType;
 @property (nonatomic, readonly, getter=getLightTypeName) NSString *lightTypeName;
 @property (nonatomic, readonly, getter=getTranslation) Position translation;
+@property (nonatomic, readonly, getter=getNode) FBXNode *node;
 
 - (NSString *)getName;
 - (FBXLightType)getLightType;
 - (NSString *)getLightTypeName;
 - (Position)getTranslation;
+- (FBXNode *)getNode;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,6 +7,8 @@
 
 #import "FBXLight.h"
 #import "FBXLight_Internal.h"
+#import "FBXNode.h"
+#import "FBXNode_Internal.h"
 #import "FBXStruct.h"
 #import "fbxsdk.h"
 
@@ -76,10 +78,24 @@
     if (_cLight == NULL) {
         return PositionZero;
     }
+     
+    FbxNode* node = _cLight->GetNode();
+    FbxDouble3 translation = node->LclTranslation.Get();
+    return PositionMake(translation[0], translation[1], translation[2]);
+}
+
+- (FBXNode*)getNode
+{
+    if (_cLight == NULL) {
+        return [[FBXNode alloc] init];
+    }
     
     FbxNode* node = _cLight->GetNode();
-    FbxDouble3 translation = node->LclTranslation.Get();    
-    return PositionMake(translation[0], translation[1], translation[2]);
+    if (node == NULL) {
+        return [[FBXNode alloc] init];
+    }
+
+    return [[FBXNode alloc] initWithCNode:node];
 }
 
 @end

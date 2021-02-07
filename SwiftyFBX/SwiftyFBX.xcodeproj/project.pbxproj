@@ -53,6 +53,7 @@
 		45ACB79425A467AB00ED565F /* FBXManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ACB79325A467AB00ED565F /* FBXManager.mm */; };
 		45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ACB7A825A46B7400ED565F /* FBXManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45C1BAA525C662D800D7D9FE /* FBXStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C1BAA425C662D800D7D9FE /* FBXStruct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45C53ED825CF8E6E001C4759 /* FBXNode_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C53ED725CF8E6E001C4759 /* FBXNode_Internal.h */; };
 		45CFC37B25C6823B00DAD79C /* FBXColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CFC37925C6823B00DAD79C /* FBXColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45CFC37C25C6823B00DAD79C /* FBXColor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45CFC37A25C6823B00DAD79C /* FBXColor.mm */; };
 		45D28F5225A4E083007A7489 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D28F5125A4E083007A7489 /* main.swift */; };
@@ -158,6 +159,7 @@
 		45ACB79325A467AB00ED565F /* FBXManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXManager.mm; sourceTree = "<group>"; };
 		45ACB7A825A46B7400ED565F /* FBXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXManager.h; sourceTree = "<group>"; };
 		45C1BAA425C662D800D7D9FE /* FBXStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXStruct.h; sourceTree = "<group>"; };
+		45C53ED725CF8E6E001C4759 /* FBXNode_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXNode_Internal.h; sourceTree = "<group>"; };
 		45CFC37925C6823B00DAD79C /* FBXColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBXColor.h; sourceTree = "<group>"; };
 		45CFC37A25C6823B00DAD79C /* FBXColor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FBXColor.mm; sourceTree = "<group>"; };
 		45D28F4F25A4E083007A7489 /* fbx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fbx; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +275,7 @@
 				4586F83325AAE9F1000BDC10 /* FBXMesh_Internal.h */,
 				45DA64D325A5862F00C77BD8 /* FBXMesh.h */,
 				45DA64D425A5862F00C77BD8 /* FBXMesh.mm */,
+				45C53ED725CF8E6E001C4759 /* FBXNode_Internal.h */,
 				45DA64D925A5867500C77BD8 /* FBXNode.h */,
 				45DA64DA25A5867500C77BD8 /* FBXNode.mm */,
 				456EC0C325C40E7100264AAB /* FBXPose_Internal.h */,
@@ -338,6 +341,7 @@
 				456EC0C425C40E7100264AAB /* FBXPose_Internal.h in Headers */,
 				45ABD2F225BD3AFA001DCF58 /* FBXLight_Internal.h in Headers */,
 				4586F83425AAE9F1000BDC10 /* FBXMesh_Internal.h in Headers */,
+				45C53ED825CF8E6E001C4759 /* FBXNode_Internal.h in Headers */,
 				459084A025BBEF90006DCF91 /* FBXSkeleton_Internal.h in Headers */,
 				456F48D225AA9FDF00B03DF2 /* FBXLayerContainer.h in Headers */,
 				455BE82425BD40380016F2A8 /* FBXCamera.h in Headers */,

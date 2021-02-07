@@ -7,12 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "FBXStruct.h"
+@class FBXNode;
 
 NS_ASSUME_NONNULL_BEGIN
 
 static NSArray<NSString*> *const FBXLightTypeNames = @[@"Point", @"Directional", @"Spot", @"Area", @"Volume"];
-
-@class FBXNode;
 
 @interface FBXLight : NSObject
 

@@ -43,4 +43,45 @@
     _cNode->LclTranslation.Set(translation);
 }
 
+- (Position)getRotation
+{
+    if (_cNode == NULL) {
+        return PositionZero;
+    }
+
+    FbxDouble3 rotation = _cNode->LclRotation.Get();
+    return PositionMake(rotation[0], rotation[1], rotation[2]);
+}
+
+- (void)setRotation:(Position)value
+{
+    if (_cNode == NULL) {
+        return;
+    }
+    
+    FbxDouble3 rotation = FbxDouble3(value.x, value.y, value.z);
+    _cNode->LclRotation.Set(rotation);
+}
+
+- (Position)getScale
+{
+    if (_cNode == NULL) {
+        return PositionZero;
+    }
+    
+    FbxDouble3 scale = _cNode->LclScaling.Get();
+    return PositionMake(scale[0], scale[1], scale[2]);
+}
+
+- (void)setScale:(Position)value
+{
+    if (_cNode == NULL) {
+        return;
+    }
+    
+    FbxDouble3 scale = FbxDouble3(value.x, value.y, value.z);
+    _cNode->LclScaling.Set(scale);
+}
+
 @end
+

@@ -9,6 +9,9 @@
 #import "FBXMesh_Internal.h"
 #import "FBXLayerElementNormal.h"
 #import "FBXLayerElementNormal_Internal.h"
+#import "FBXNode.h"
+#import "FBXNode_Internal.h"
+#import "FBXStruct.h"
 #import "fbxsdk.h"
 
 @interface FBXMesh ()
@@ -38,19 +41,84 @@
     return self;
 }
 
+- (FBXNode*)getNode
+{
+    if (_cMesh == NULL) {
+        return [[FBXNode alloc] init];
+    }
+    
+    FbxNode* node = _cMesh->GetNode();
+    if (node == NULL) {
+        return [[FBXNode alloc] init];
+    }
+
+    return [[FBXNode alloc] initWithCNode:node];
+}
+
+- (NSString *)getName
+{
+    if (_cMesh == NULL) {
+        return @"";
+    }
+
+    NSString *name = [NSString stringWithCString:_cMesh->GetName() encoding:NSUTF8StringEncoding];
+    if (name == nil) {
+        return @"";
+    }
+
+    return name;
+}
+
+- (Position)getTranslation
+{
+    if (_cMesh == NULL) {
+        return PositionZero;
+    }
+    
+    return self.node.translation;
+}
+
+- (Position)getRotation
+{
+    if (_cMesh == NULL) {
+        return PositionZero;
+    }
+    
+    return self.node.rotation;
+}
+
+- (Position)getScale
+{
+    if (_cMesh == NULL) {
+        return PositionZero;
+    }
+    
+    return self.node.scale;
+}
+
 - (int)getControlPointsCount
 {
-    return 0;//self.cMesh->GetControlPointsCount();
+    if (_cMesh == NULL) {
+        return 0;
+    }
+    return _cMesh->GetControlPointsCount();
 }
 
 - (FbxVector4* )getControlPoints
 {
-    return self.cMesh->GetControlPoints();
+    if (_cMesh == NULL) {
+        return NULL;
+    }
+
+    return _cMesh->GetControlPoints();
 }
 
 - (int)getElementNormalCount
 {
-    return self.cMesh->GetElementNormalCount();
+    if (_cMesh == NULL) {
+        return NULL;
+    }
+    return _cMesh->GetElementNormalCount();
 }
 
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index
@@ -71,11 +139,28 @@
 
 - (int)getPolygonCount
 {
-    if (self.cMesh == NULL) {
+    if (_cMesh == NULL) {
         return 0;
     }
         
-    return self.cMesh->GetPolygonCount();
+    return _cMesh->GetPolygonCount();
+}
+
+- (int*)getPolygonVertices
+{
+    if (_cMesh == NULL) {
+        return nullptr;
+    }
+    return _cMesh->GetPolygonVertices();
+}
+
+- (int)getPolygonVertexCount
+{
+    if (_cMesh == NULL) {
+        return 0;
+    }
+        
+    return _cMesh->GetPolygonVertexCount();
 }
 
 - (void)getElementPolygonGroupCount

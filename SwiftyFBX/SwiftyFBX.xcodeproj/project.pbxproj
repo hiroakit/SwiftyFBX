@@ -18,7 +18,7 @@
 		45273E6825C418550060B3C1 /* FBXGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 45273E6625C418550060B3C1 /* FBXGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45273E6925C418550060B3C1 /* FBXGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45273E6725C418550060B3C1 /* FBXGeometry.mm */; };
 		45273E6B25C41AE00060B3C1 /* FBXSurfaceMaterial_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45273E6A25C41AE00060B3C1 /* FBXSurfaceMaterial_Internal.h */; };
-		452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */; };
+		452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 452BB25B25AAA83600B0ECFE /* FBXLayerElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		452BB25E25AAA83600B0ECFE /* FBXLayerElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 452BB25C25AAA83600B0ECFE /* FBXLayerElement.m */; };
 		45455DA225B48EEA00D6D8A7 /* FBXSecne_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45455DA125B48EEA00D6D8A7 /* FBXSecne_Internal.h */; };
 		45455DB025B51B7400D6D8A7 /* FBXTexture_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 45455DAF25B51B7400D6D8A7 /* FBXTexture_Internal.h */; };
@@ -66,7 +66,7 @@
 		45DA64D025A584E000C77BD8 /* FBXScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64CE25A584E000C77BD8 /* FBXScene.mm */; };
 		45DA64D525A5862F00C77BD8 /* FBXMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D325A5862F00C77BD8 /* FBXMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45DA64D625A5862F00C77BD8 /* FBXMesh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64D425A5862F00C77BD8 /* FBXMesh.mm */; };
-		45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D925A5867500C77BD8 /* FBXNode.h */; };
+		45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64D925A5867500C77BD8 /* FBXNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45DA64DC25A5867500C77BD8 /* FBXNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64DA25A5867500C77BD8 /* FBXNode.mm */; };
 		45DA64E125A58B1200C77BD8 /* FBXDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA64DF25A58B1200C77BD8 /* FBXDocument.h */; };
 		45DA64E225A58B1200C77BD8 /* FBXDocument.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45DA64E025A58B1200C77BD8 /* FBXDocument.mm */; };
@@ -349,6 +349,7 @@
 				45DA64E725A58EF300C77BD8 /* FBXCollection.h in Headers */,
 				452BB25D25AAA83600B0ECFE /* FBXLayerElement.h in Headers */,
 				45273E6825C418550060B3C1 /* FBXGeometry.h in Headers */,
+				45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */,
 				45273E6B25C41AE00060B3C1 /* FBXSurfaceMaterial_Internal.h in Headers */,
 				4590849A25BBEE7E006DCF91 /* FBXSkeleton.h in Headers */,
 				45A6CADA25C6A50800F8EDB5 /* FBXAnimStack.h in Headers */,
@@ -363,7 +364,6 @@
 				4586F83E25AAEA9F000BDC10 /* FBXLayerElementNormal_Internal.h in Headers */,
 				45A6CADD25C6A63100F8EDB5 /* FBXAnimStack_Internal.h in Headers */,
 				45ABD2EB25BD3798001DCF58 /* FBXSurfaceMaterial.h in Headers */,
-				45DA64DB25A5867500C77BD8 /* FBXNode.h in Headers */,
 				455BE82725BD407E0016F2A8 /* FBXCamera_Internal.h in Headers */,
 				45455DA225B48EEA00D6D8A7 /* FBXSecne_Internal.h in Headers */,
 				45ACB7A925A46B7400ED565F /* FBXManager.h in Headers */,

@@ -67,6 +67,16 @@ extension FBXCommand {
             
             print("Version: " + fbx.format.versionString)
             print("Meshs: \(fbx.meshs.count) (\(fbx.getPolygonCount()) polygons)")
+            fbx.meshs.forEach { (mesh) in
+                print("\t - Name: " + (mesh.name == "" ? "Unknown" : mesh.name))
+                print("\t\t - Polygon Count: \(mesh.polygonCount)")
+                print("\t\t - Polygon Vertex Count: \(mesh.polygonVertexCount)")
+                print("\t\t - Control Points Count: \(mesh.controlPointsCount)")
+                print("\t\t - Element Normal Count: \(mesh.elementNormalCount)")
+                print("\t\t - Local translation (x,y,z): \(mesh.translation.x) \(mesh.translation.y) \(mesh.translation.z)")
+                print("\t\t - Local rotation (x,y,z): \(mesh.rotation.x) \(mesh.rotation.y) \(mesh.rotation.z)")
+                print("\t\t - Local scale (x,y,z): \(mesh.scale.x) \(mesh.scale.y) \(mesh.scale.z)")
+            }
             print("Textures: \(fbx.textures.count)")
             fbx.textures.forEach { (texture) in
                 if let url = texture.url {

@@ -7,14 +7,24 @@
 
 #import <Foundation/Foundation.h>
 #import "FBXGeometry.h"
+#import "FBXNode.h"
 @class FBXLayerElementNormal;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FBXMesh : FBXGeometry
-- (int)getControlPointsCount;
+@property (nonatomic, readonly, getter=getName) NSString *name;
+@property (nonatomic, readonly, getter=getNode) FBXNode *node;
+@property (nonatomic, readonly, getter=getControlPointsCount) int controlPointsCount;
+@property (nonatomic, readonly, getter=getElementNormalCount) int elementNormalCount;
+@property (nonatomic, readonly, getter=getPolygonCount) int polygonCount;
+@property (nonatomic, readonly, getter=getPolygonVertexCount) int polygonVertexCount;
+@property (nonatomic, readonly, getter=getTranslation) Position translation;
+@property (nonatomic, readonly, getter=getRotation) Position rotation;
+@property (nonatomic, readonly, getter=getScale) Position scale;
+
 - (int)getElementNormalCount;
-- (int)getPolygonCount;
+- (nullable int*)getPolygonVertices;
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index;
 @end
 

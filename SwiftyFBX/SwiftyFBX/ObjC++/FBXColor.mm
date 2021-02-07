@@ -2,7 +2,7 @@
 //  FBXColor.mm
 //  SwiftyFBX
 //
-//  Created by hiroakit on 2021/01/31.
+//  Created by Hiroaki ENDOH on 2021/01/31.
 //
 
 #import "FBXColor.h"

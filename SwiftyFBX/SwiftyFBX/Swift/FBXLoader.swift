@@ -13,16 +13,9 @@ public class FBXLoader {
         let result = SwiftyFBXLoader.load(with: url)
         
         guard let scene = result.scene else {
-            return FBX(scene: nil,
-                       format: SwiftyFBXFormat.unknown())
+            return FBX(scene: nil, format: SwiftyFBXFormat.unknown())
         }
         
-        let fbx = FBX(scene: scene, format: result.format)
-        
-//        let mesh: FBXMesh = result.scene?.meshs.first! as! FBXMesh
-//        let _ = mesh.getControlPointsCount()
-//        let _ = mesh.getElementNormalCount()
-        
-        return fbx
+        return FBX(scene: scene, format: result.format)
     }
 }

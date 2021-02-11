@@ -9,6 +9,7 @@
 #import "FBXGeometry.h"
 #import "FBXNode.h"
 @class FBXLayerElementNormal;
+@class FBXPoint;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,9 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getTranslation) Position translation;
 @property (nonatomic, readonly, getter=getRotation) Position rotation;
 @property (nonatomic, readonly, getter=getScale) Position scale;
+@property (nonatomic, readonly, getter=getControlPoints) NSArray<FBXPoint*> *controlPoints;
 
 - (int)getElementNormalCount;
-- (nullable int*)getPolygonVertices;
+- (int)getPolygonVertices;
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index;
 @end
 

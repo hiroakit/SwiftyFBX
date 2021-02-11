@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FBXMesh ()
 - (instancetype)initWithCMesh:(FbxMesh* )cMesh;
-- (FbxVector4* )getControlPoints;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -53,7 +53,7 @@ extension FBXCommand {
             guard FileManager.default.fileExists(atPath: fileURL.relativePath) else {
                 throw(RuntimeError("Not found the FBX file."))
             }
-            
+
             let fbx = FBXLoader.load(url: fileURL)
             
             guard !isTexturePathOnly else {
@@ -71,7 +71,10 @@ extension FBXCommand {
                 print("\t - Name: " + (mesh.name == "" ? "Unknown" : mesh.name))
                 print("\t\t - Polygon Count: \(mesh.polygonCount)")
                 print("\t\t - Polygon Vertex Count: \(mesh.polygonVertexCount)")
-                print("\t\t - Control Points Count: \(mesh.controlPointsCount)")
+                print("\t\t - Control Points: \(mesh.controlPointsCount) counts")
+                for (i, position) in zip(mesh.controlPoints.indices, mesh.controlPoints){
+                    print("\t\t\t - \(i+1): \(position.x), \(position.y), \(position.z)")
+                }                
                 print("\t\t - Element Normal Count: \(mesh.elementNormalCount)")
                 print("\t\t - Local translation (x,y,z): \(mesh.translation.x) \(mesh.translation.y) \(mesh.translation.z)")
                 print("\t\t - Local rotation (x,y,z): \(mesh.rotation.x) \(mesh.rotation.y) \(mesh.rotation.z)")

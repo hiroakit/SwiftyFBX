@@ -12,6 +12,7 @@
 #import "FBXNode.h"
 #import "FBXNode_Internal.h"
 #import "FBXStruct.h"
+#import "FBXPoint.h"
 #import "fbxsdk.h"
 
 @interface FBXMesh ()
@@ -104,13 +105,31 @@
     return _cMesh->GetControlPointsCount();
 }
 
-- (FbxVector4* )getControlPoints
+- (NSArray<FBXPoint*>*)getControlPoints
 {
+    NSMutableArray<FBXPoint*> *controlPoints = [NSMutableArray array];
+    
     if (_cMesh == NULL) {
-        return NULL;
+        return controlPoints;
+    }
+    
+    FbxVector4* points = _cMesh->GetControlPoints();
+    if (points == NULL) {
+        return controlPoints;
     }
 
-    return _cMesh->GetControlPoints();
+    int lengthOfMData = std::extent<decltype(points->mData)>::value;
+    if (lengthOfMData < 3) {
+        return controlPoints;
+    }
+
+    int pointCount = _cMesh->GetControlPointsCount();
+    for (int i = 0; i < pointCount; i++) {
+        FBXPoint *point = [FBXPoint pointWithX:points[i][0] y:points[i][1] z:points[i][2]];
+        [controlPoints addObject:point];
+    }
+    
+    return controlPoints;
 }
 
 - (int)getElementNormalCount
@@ -146,12 +165,15 @@
     return _cMesh->GetPolygonCount();
 }
 
-- (int*)getPolygonVertices
+- (int)getPolygonVertices
 {
     if (_cMesh == NULL) {
-        return nullptr;
+        return 0;
     }
-    return _cMesh->GetPolygonVertices();
+    
+    int *hoge = _cMesh->GetPolygonVertices();
+    int foo = sizeof(&hoge)/sizeof(&hoge[0]); // std::extent<decltype(hoge)>::value;
+    return foo;
 }
 
 - (int)getPolygonVertexCount

@@ -22,6 +22,7 @@
 #import "FBXColor.h"
 #import "FBXAnimStack.h"
 #import "FBXNode.h"
+#import "FBXPoint.h"
 #import "SwiftyFBXLoader.h"
 #import "SwiftyFBXLoadResult.h"
 #import "SwiftyFBXFormat.h"

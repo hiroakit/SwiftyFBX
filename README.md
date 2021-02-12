@@ -4,11 +4,16 @@ The FBX for Swift. It depends on the [Autodesk FBX SDK](https://www.autodesk.com
 
 # Status
 
+- Currently, Making the MVP. 
 - Working in progress.
 
 # Dependency
 
 - [Autodesk FBX SDK 2020.2 Clang (Universal Binary)](https://www.autodesk.com/developer-network/platform-technologies/fbx-sdk-2020-2)
+
+# Architecture
+
+- Swift <-- Objective-C++ <-- C++ (FBX SDK)
 
 # How to build
 

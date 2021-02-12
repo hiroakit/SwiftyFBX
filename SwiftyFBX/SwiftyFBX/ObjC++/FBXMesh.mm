@@ -140,6 +140,20 @@
     return _cMesh->GetElementNormalCount();
 }
 
+- (FBXLayerElementNormal *)getElementNormal
+{
+    if (_cMesh == NULL) {
+        return nil;
+    }
+
+    FbxGeometryElementNormal* cNormal = _cMesh->GetElementNormal();
+    if (cNormal == NULL) {
+        return nil;
+    }
+    
+    return [FBXLayerElementNormal createWithCLayerElementNormal:(FbxLayerElementNormal*)cNormal];
+}
+
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index
 {
     FbxGeometryElementNormal* cNormals = self.cMesh->GetElementNormal(index);
@@ -165,15 +179,38 @@
     return _cMesh->GetPolygonCount();
 }
 
-- (int)getPolygonVertices
+- (NSArray<FBXPoint*>*)getPolygonVertices
 {
+    NSMutableArray<FBXPoint*> *vertices = [NSMutableArray array];
+    
     if (_cMesh == NULL) {
-        return 0;
+        return vertices;
     }
     
-    int *hoge = _cMesh->GetPolygonVertices();
-    int foo = sizeof(&hoge)/sizeof(&hoge[0]); // std::extent<decltype(hoge)>::value;
-    return foo;
+    int* polygonVertices = _cMesh->GetPolygonVertices();
+    if (polygonVertices == NULL) {
+        return vertices;
+    }
+    
+    int polygonVertexCount = [self getPolygonVertexCount];
+    if (polygonVertexCount < 1) {
+        return vertices;
+    }
+    
+    FbxVector4* controlPoints = _cMesh->GetControlPoints();
+    if (controlPoints == NULL) {
+        return vertices;
+    }
+        
+    for (int i = 0; i < polygonVertexCount; i++) {
+        int cursor = polygonVertices[i];
+        FBXPoint *point = [FBXPoint pointWithX:controlPoints[cursor][0]
+                                             y:controlPoints[cursor][1]
+                                             z:controlPoints[cursor][2]];
+        [vertices addObject:point];
+    }
+    
+    return vertices;
 }
 
 - (int)getPolygonVertexCount
@@ -183,6 +220,35 @@
     }
         
     return _cMesh->GetPolygonVertexCount();
+}
+
+- (NSArray<FBXPoint*>*)getPolygonVertexNormals
+{
+    NSMutableArray *polygonVertexNormals = [NSMutableArray array];
+    if (_cMesh == NULL) {
+        return polygonVertexNormals;
+    }
+        
+    FbxArray<fbxsdk::FbxVector4> normals;
+    BOOL status = _cMesh->GetPolygonVertexNormals(normals);
+    if (!status || normals.GetCount() < 1) {
+        return polygonVertexNormals;
+    }
+    
+    FbxVector4 hoge = normals.GetFirst();
+    int lengthOfMData = std::extent<decltype(hoge.mData)>::value;
+    if (lengthOfMData < 3) {
+        return polygonVertexNormals;
+    }
+
+    for (int i = 0; i < normals.Size(); i++) {
+        FBXPoint *normal = [FBXPoint pointWithX:normals[i][0]
+                                              y:normals[i][1]
+                                              z:normals[i][2]];
+        [polygonVertexNormals addObject:normal];
+    }
+    
+    return polygonVertexNormals;
 }
 
 - (void)getElementPolygonGroupCount

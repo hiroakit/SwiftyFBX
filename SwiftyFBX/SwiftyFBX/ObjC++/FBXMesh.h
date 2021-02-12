@@ -25,8 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, getter=getScale) Position scale;
 @property (nonatomic, readonly, getter=getControlPoints) NSArray<FBXPoint*> *controlPoints;
 
-- (int)getElementNormalCount;
-- (int)getPolygonVertices;
+- (NSArray<FBXPoint*>*)getPolygonVertices;
+- (NSArray<FBXPoint*>*)getPolygonVertexNormals;
+- (FBXLayerElementNormal *)getElementNormal;
 - (FBXLayerElementNormal *)getElementNormalAtIndex:(int)index;
 @end
 

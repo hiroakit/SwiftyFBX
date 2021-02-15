@@ -123,26 +123,11 @@
     
     FbxScene* cScene = FbxScene::Create(manager, "originalScene");
     importer->Import(cScene);
-//    if () {
-//        int count = cScene->GetMemberCount<FbxMesh>();
-//        NSLog(@"[INFO] Mesh %d", count);
-//    }
-    
-//    FbxMesh* cMesh = cScene->GetMember<FbxMesh>(0);
-//    FbxNodeAttribute::EType type = cMesh->GetAttributeType();
-//    if (type == FbxNodeAttribute::eMesh) {
-//        
-//    }
         
     FBXScene *scene = [[FBXScene alloc] initWithCScene:cScene];
     SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult
                                                                        format:format
                                                                         scene:scene];
-//    FBXMesh *mesh = scene.meshs.firstObject;
-//    int controlPointsCount = [mesh getControlPointsCount];
-//    FbxVector4* fbxVector4 = [mesh getControlPoints];
-//    int elementNomalCount = [mesh getElementNormalCount];
-//    FBXLayerElementNormal *normal = [mesh getElementNormalAtIndex:0];
 
     return result;
 }

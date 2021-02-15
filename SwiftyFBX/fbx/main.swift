@@ -70,12 +70,26 @@ extension FBXCommand {
             fbx.meshs.forEach { (mesh) in
                 print("\t - Name: " + (mesh.name == "" ? "Unknown" : mesh.name))
                 print("\t\t - Polygon Count: \(mesh.polygonCount)")
-                print("\t\t - Polygon Vertex Count: \(mesh.polygonVertexCount)")
+                
+                print("\t\t - Polygon Vertex: \(mesh.polygonVertexCount) counts")
+                let vertices = mesh.getPolygonVertices()
+                for (i, vertex) in zip(vertices.indices, vertices){
+                    print("\t\t\t - \(i+1): \(vertex.x), \(vertex.y), \(vertex.z)")
+                }
+
                 print("\t\t - Control Points: \(mesh.controlPointsCount) counts")
                 for (i, position) in zip(mesh.controlPoints.indices, mesh.controlPoints){
                     print("\t\t\t - \(i+1): \(position.x), \(position.y), \(position.z)")
-                }                
-                print("\t\t - Element Normal Count: \(mesh.elementNormalCount)")
+                }
+                
+                let normals = mesh.getPolygonVertexNormals()
+                print("\t\t - Polygon Vertex Normal: \(normals.count) counts")
+                for (i, normal) in zip(normals.indices, normals){
+                    print("\t\t\t - \(i+1): \(normal.x), \(normal.y), \(normal.z)")
+                }
+                
+                print("\t\t - Element Normal: \(mesh.elementNormalCount) counts")
+                                
                 print("\t\t - Local translation (x,y,z): \(mesh.translation.x) \(mesh.translation.y) \(mesh.translation.z)")
                 print("\t\t - Local rotation (x,y,z): \(mesh.rotation.x) \(mesh.rotation.y) \(mesh.rotation.z)")
                 print("\t\t - Local scale (x,y,z): \(mesh.scale.x) \(mesh.scale.y) \(mesh.scale.z)")

@@ -248,12 +248,17 @@
     return [[FBXAnimStack alloc] initWithCAnimStack:stack];
 }
 
-- (FBXUpVector)getCurrentAxis
+- (AxisSystem)getCurrentAxis
 {
-    int dir;
+    int upVectorDirection = 0;
     FbxAxisSystem axis = _cScene->GetGlobalSettings().GetAxisSystem();
-    FbxAxisSystem::EUpVector vector = axis.GetUpVector(dir);
-    return (FBXUpVector)vector;
+    FbxAxisSystem::EUpVector upVector = axis.GetUpVector(upVectorDirection);
+    
+    int frontVectorDirection = 0;
+    FbxAxisSystem::EFrontVector frontVector = axis.GetFrontVector(frontVectorDirection);
+    
+    AxisSystem system = AxisSystemMake((FBXUpVector)upVector, (FBXFrontVector)frontVector);
+    return system;
 }
 
 @end

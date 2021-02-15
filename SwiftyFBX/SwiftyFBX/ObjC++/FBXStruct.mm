@@ -9,3 +9,5 @@
 #import "FBXStruct.h"
 
 const Position PositionZero = { 0.0f, 0.0f, 0.0f };
+
+const AxisSystem AxisSystemUnknown = { FBXUpVectorUnknown, FBXFrontVectorUnknown };

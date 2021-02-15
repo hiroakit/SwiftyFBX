@@ -67,11 +67,11 @@ public class FBX {
         return scene.animationStacks
     }
 
-    public var vector: Int {
+    public var axis: AxisSystem {
         guard let scene = self.scene else {
-            return -1
+            return AxisSystemUnknown
         }
-        return Int(scene.getCurrentAxis().rawValue)
+        return scene.getCurrentAxis()
     }
     
     init(scene: FBXScene?, format: SwiftyFBXFormat) {

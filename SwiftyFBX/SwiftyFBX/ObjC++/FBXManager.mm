@@ -7,7 +7,7 @@
 
 #import "FBXManager.h"
 #import "SwiftyFBXLoader.h"
-#import "fbxsdk.h"
+#import <fbxsdk.h>
 
 @implementation FBXManager
 - (NSString*)create {    

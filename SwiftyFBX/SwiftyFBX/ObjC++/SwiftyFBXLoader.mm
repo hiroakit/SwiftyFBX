@@ -15,7 +15,8 @@
 #import "FBXLayerElementNormal.h"
 #import <fbxsdk.h>
 
-@implementation SwiftyFBXLoader {
+@implementation SwiftyFBXLoader
+{
     FbxManager* _manager;
     FbxImporter* _importer;
 }

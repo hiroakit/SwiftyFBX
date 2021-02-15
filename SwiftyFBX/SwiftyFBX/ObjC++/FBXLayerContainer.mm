@@ -6,7 +6,7 @@
 //
 
 #import "FBXLayerContainer.h"
-#import "fbxsdk.h"
+#import <fbxsdk.h>
 
 @implementation FBXLayerContainer
 

@@ -13,7 +13,7 @@
 #import "FBXNode_Internal.h"
 #import "FBXStruct.h"
 #import "FBXPoint.h"
-#import "fbxsdk.h"
+#import <fbxsdk.h>
 
 @interface FBXMesh ()
 @property (nonatomic)FbxMesh* cMesh;

@@ -10,7 +10,7 @@
 #import "FBXNode.h"
 #import "FBXNode_Internal.h"
 #import "FBXStruct.h"
-#import "fbxsdk.h"
+#import <fbxsdk.h>
 
 @implementation FBXLight
 {    

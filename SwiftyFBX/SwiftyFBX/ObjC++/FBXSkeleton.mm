@@ -7,7 +7,7 @@
 
 #import "FBXSkeleton.h"
 #import "FBXSkeleton_Internal.h"
-#import "fbxsdk.h"
+#import <fbxsdk.h>
 
 @implementation FBXSkeleton
 {

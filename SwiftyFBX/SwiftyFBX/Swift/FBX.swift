@@ -66,6 +66,13 @@ public class FBX {
         }
         return scene.animationStacks
     }
+
+    public var vector: Int {
+        guard let scene = self.scene else {
+            return -1
+        }
+        return Int(scene.getCurrentAxis().rawValue)
+    }
     
     init(scene: FBXScene?, format: SwiftyFBXFormat) {
         self.format = format

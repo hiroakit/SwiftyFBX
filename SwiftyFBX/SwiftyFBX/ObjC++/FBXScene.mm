@@ -248,5 +248,13 @@
     return [[FBXAnimStack alloc] initWithCAnimStack:stack];
 }
 
+- (FBXUpVector)getCurrentAxis
+{
+    int dir;
+    FbxAxisSystem axis = _cScene->GetGlobalSettings().GetAxisSystem();
+    FbxAxisSystem::EUpVector vector = axis.GetUpVector(dir);
+    return (FBXUpVector)vector;
+}
+
 @end
 

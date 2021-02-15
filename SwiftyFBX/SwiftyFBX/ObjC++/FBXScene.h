@@ -20,6 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
 @class FBXSurfaceMaterial;
 @class FBXAnimStack;
 
+typedef NS_ENUM(int, FBXUpVector)
+{
+    FBXUpVectorUnknown = -1,
+    FBXUpVectorXAxis = 1,
+    FBXUpVectorYAxis = 2,
+    FBXUpVectorZAxis = 3
+};
+
 @interface FBXScene : FBXDocument
 @property (nonatomic, readonly) NSArray<FBXMesh*> *meshs;
 @property (nonatomic, readonly) NSArray<FBXTexture*> *textures;
@@ -41,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (FBXSurfaceMaterial*)getMaterialWithName:(NSString*)name;
 - (nullable FBXAnimStack *)getCurrentAnimationStack;
 - (nullable FBXAnimStack *)getAnimationStackAtIndex:(int)index;
+- (FBXUpVector)getCurrentAxis;
 @end
 
 NS_ASSUME_NONNULL_END

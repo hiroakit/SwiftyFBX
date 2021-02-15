@@ -66,6 +66,18 @@ extension FBXCommand {
             }
             
             print("Version: " + fbx.format.versionString)
+            let axisStr: String
+            switch fbx.vector {
+            case Int(FBXUpVector.xAxis.rawValue):
+                axisStr = "X Up"
+            case Int(FBXUpVector.yAxis.rawValue):
+                axisStr = "Y Up"
+            case Int(FBXUpVector.zAxis.rawValue):
+                axisStr = "Z Up"
+            default:
+                axisStr = "Unknown"
+            }
+            print("Axis: \(axisStr)")
             print("Meshs: \(fbx.meshs.count) (\(fbx.getPolygonCount()) polygons)")
             fbx.meshs.forEach { (mesh) in
                 print("\t - Name: " + (mesh.name == "" ? "Unknown" : mesh.name))

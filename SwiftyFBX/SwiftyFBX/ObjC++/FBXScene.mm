@@ -250,12 +250,15 @@
 
 - (AxisSystem)getCurrentAxis
 {
-    int upVectorDirection = 0;
     FbxAxisSystem axis = _cScene->GetGlobalSettings().GetAxisSystem();
+    
+    int upVectorDirection = 0;
     FbxAxisSystem::EUpVector upVector = axis.GetUpVector(upVectorDirection);
     
     int frontVectorDirection = 0;
     FbxAxisSystem::EFrontVector frontVector = axis.GetFrontVector(frontVectorDirection);
+    
+    // FbxAxisSystem::ECoordSystem coord = axis.GetCoorSystem();
     
     AxisSystem system = AxisSystemMake((FBXUpVector)upVector, (FBXFrontVector)frontVector);
     return system;

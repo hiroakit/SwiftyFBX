@@ -67,6 +67,9 @@ extension FBXCommand {
             
             print("Version: " + fbx.format.versionString)
             
+            print("File header info:")
+            print("\t - Creator: " + (fbx.fileHeaderInfo?.creator ?? ""))
+            
             var axisStr: String = ""
             switch fbx.axis.up {
             case FBXUpVector.X:
@@ -87,6 +90,12 @@ extension FBXCommand {
                 axisStr += ", Unknown"
             }
             print("Axis: \(axisStr)")
+            
+            print("Scene document info:")
+            print("\t - FileName: \(fbx.info.fileName)")
+            print("\t - Title: \(fbx.info.title)")
+            print("\t - Author: \(fbx.info.author)")
+            print("\t - Application: \(fbx.info.applicationVender) \(fbx.info.applicationName) \(fbx.info.applicationVersion)")
             
             print("Meshs: \(fbx.meshs.count) (\(fbx.getPolygonCount()) polygons)")
             fbx.meshs.forEach { (mesh) in

@@ -16,6 +16,8 @@ public class FBXLoader {
             return FBX(scene: nil, format: SwiftyFBXFormat.unknown())
         }
         
-        return FBX(scene: scene, format: result.format)
+        let fbx = FBX(scene: scene, format: result.format)
+        fbx.fileHeaderInfo = result.headerInfo
+        return fbx
     }
 }

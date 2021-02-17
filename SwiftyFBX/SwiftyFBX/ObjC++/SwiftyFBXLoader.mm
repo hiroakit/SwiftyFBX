@@ -12,6 +12,8 @@
 #import "FBXSecne_Internal.h"
 #import "FBXMesh.h"
 #import "FBXMesh_Internal.h"
+#import "FBXIOFileHeaderInfo.h"
+#import "FBXIOFileHeaderInfo_Internal.h"
 #import "FBXLayerElementNormal.h"
 #import <fbxsdk.h>
 
@@ -104,7 +106,7 @@
     FbxImporter* importer = FbxImporter::Create(manager, "");
     BOOL importResult = importer->Initialize(url.path.UTF8String, -1, manager->GetIOSettings());
     importer->GetFileVersion(major, minor, revision);
-    
+
     SwiftyFBXFormat *format = [[SwiftyFBXFormat alloc] initWithMajor:major
                                                                minor:minor
                                                             revision:revision];
@@ -123,12 +125,16 @@
     
     FbxScene* cScene = FbxScene::Create(manager, "originalScene");
     importer->Import(cScene);
+    
+    FbxIOFileHeaderInfo* cHeaderInfo = importer->GetFileHeaderInfo();
+    FBXIOFileHeaderInfo* headerInfo = [[FBXIOFileHeaderInfo alloc] initWithCIOFileHeaderInfo:cHeaderInfo];
         
     FBXScene *scene = [[FBXScene alloc] initWithCScene:cScene];
     SwiftyFBXLoadResult *result = [[SwiftyFBXLoadResult alloc] initWithResult:importResult
                                                                        format:format
                                                                         scene:scene];
-
+    result.headerInfo = headerInfo;
+    
     return result;
 }
 @end

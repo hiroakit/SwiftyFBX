@@ -9,6 +9,7 @@ import Foundation
 
 public class FBX {
     public let format: SwiftyFBXFormat
+    public var fileHeaderInfo: FBXIOFileHeaderInfo? = nil
     let scene: FBXScene?
     
     public var meshs: Array<FBXMesh> {
@@ -73,7 +74,14 @@ public class FBX {
         }
         return scene.getCurrentAxis()
     }
-    
+
+    public var info: FBXDocumentInfo {
+        guard let scene = self.scene else {
+            return FBXDocumentInfo()
+        }
+        return scene.getInfo()
+    }
+
     init(scene: FBXScene?, format: SwiftyFBXFormat) {
         self.format = format
         self.scene = scene

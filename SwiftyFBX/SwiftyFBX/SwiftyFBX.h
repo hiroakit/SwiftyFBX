@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "FBXManager.h"
 #import "FBXDocument.h"
+#import "FBXDocumentInfo.h"
+#import "FBXIOFileHeaderInfo.h"
 #import "FBXScene.h"
 #import "FBXMesh.h"
 #import "FBXTexture.h"

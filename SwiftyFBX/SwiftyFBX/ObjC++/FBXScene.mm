@@ -23,6 +23,7 @@
 #import "FBXSurfaceMaterial_Internal.h"
 #import "FBXAnimStack.h"
 #import "FBXAnimStack_Internal.h"
+#import "FBXDocumentInfo.h"
 #import <fbxsdk.h>
 
 @implementation FBXScene
@@ -250,6 +251,10 @@
 
 - (AxisSystem)getCurrentAxis
 {
+    if (_cScene == NULL) {
+        return AxisSystemUnknown;
+    }
+
     FbxAxisSystem axis = _cScene->GetGlobalSettings().GetAxisSystem();
     
     int upVectorDirection = 0;
@@ -264,5 +269,33 @@
     return system;
 }
 
-@end
+- (FBXDocumentInfo *)getSceneInfo
+{
+    FBXDocumentInfo *info = [[FBXDocumentInfo alloc] init];
 
+    if (_cScene == NULL) {
+        return nil;
+    }
+    
+    FbxDocumentInfo* cInfo = _cScene->GetSceneInfo();
+    if (cInfo == nullptr) {
+        return info;
+    }
+    
+    info.title = [NSString stringWithCString:cInfo->mTitle
+                                    encoding:NSUTF8StringEncoding];
+    info.author = [NSString stringWithCString:cInfo->mAuthor
+                                     encoding:NSUTF8StringEncoding];
+    info.applicationName = [NSString stringWithCString:cInfo->Original_ApplicationName.Get().Buffer()
+                                              encoding:NSUTF8StringEncoding];
+    info.applicationVender = [NSString stringWithCString:cInfo->Original_ApplicationVendor.Get().Buffer()
+                                              encoding:NSUTF8StringEncoding];
+    info.applicationVersion = [NSString stringWithCString:cInfo->Original_ApplicationVersion.Get().Buffer()
+                                              encoding:NSUTF8StringEncoding];
+    info.fileName = [NSString stringWithCString:cInfo->Original_FileName.Get().Buffer()
+                                              encoding:NSUTF8StringEncoding];
+
+    return info;
+}
+
+@end

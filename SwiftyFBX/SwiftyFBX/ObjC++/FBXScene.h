@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class FBXPose;
 @class FBXSurfaceMaterial;
 @class FBXAnimStack;
+@class FBXDocumentInfo;
 
 @interface FBXScene : FBXDocument
 @property (nonatomic, readonly) NSArray<FBXMesh*> *meshs;
@@ -43,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable FBXAnimStack *)getCurrentAnimationStack;
 - (nullable FBXAnimStack *)getAnimationStackAtIndex:(int)index;
 - (AxisSystem)getCurrentAxis;
+- (FBXDocumentInfo *)getSceneInfo;
 @end
 
 NS_ASSUME_NONNULL_END

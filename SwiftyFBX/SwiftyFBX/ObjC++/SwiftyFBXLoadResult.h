@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 @class SwiftyFBXFormat;
+@class FBXIOFileHeaderInfo;
 @class FBXScene;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isSuccessful;
 @property (nullable, nonatomic, readonly) FBXScene *scene;
 @property (nonatomic, readonly) SwiftyFBXFormat *format;
+@property (nonatomic) FBXIOFileHeaderInfo *headerInfo;
+
 - (instancetype)initWithResult:(BOOL)result
                         format:(SwiftyFBXFormat *)format
                          scene:(nullable FBXScene *)scene;

@@ -19,6 +19,7 @@
         _isSuccessful = result;
         _format = format;
         _scene = scene;
+        _headerInfo = nil;
     }
     return self;
 }
